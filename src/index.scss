@@ -1,0 +1,19 @@
+@use "./scss/variables";
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-height: 100vh;
+  line-height: 1.5;
+  font-weight: 400;
+  font-family: variables.$ff-play-fair;
+}
+
+#root {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
