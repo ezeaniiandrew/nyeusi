@@ -6,6 +6,7 @@ import { routes } from "@/constants/index";
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(true);
+
   return (
     <nav aria-labelledby="primary-navigation" className={styles.nav}>
       <h2 id="primary-navigation">
