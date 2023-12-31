@@ -1,0 +1,12 @@
+@use "variables";
+
+@function pxToRem($px) {
+  @return calc($px / variables.$base-font-size * 1rem);
+}
+
+@function getFluidFontSize($minFontSize: 16, $maxFontSize: 20, $minViewport: 600, $maxViewport: 1540) {
+  $slope: calc(($minFontSize - $maxFontSize) / ($minViewport - $maxViewport));
+  $base: calc(($maxFontSize - $slope * $maxViewport) * 1rem);
+
+  @return calc($base + 100vw * $slope)
+}

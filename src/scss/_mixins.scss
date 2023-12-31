@@ -1,0 +1,31 @@
+@use "functions";
+
+@mixin flex($align: center, $justify: center) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+
+
+$breakpoints: (
+  sm: functions.pxToRem(600px),
+  md: functions.pxToRem(768px),
+  lg: functions.pxToRem(992px),
+  xl: functions.pxToRem(1024px),
+  xxl: functions.pxToRem(1200px),
+  xxxl: functions.pxToRem(1400px),
+
+);
+
+@mixin mediaQuery($breakpoint) {
+  @if map-has-key($map: $breakpoints, $key: $breakpoint) {
+    @media screen and (max-width: map-get($breakpoints, $breakpoint)) {
+      @content
+    }
+  }
+
+  @else {
+    @error "Invalid breakpoint: #{$breakpoint}. Please use one of: #{map-keys($breakpoints)}"
+  }
+}
