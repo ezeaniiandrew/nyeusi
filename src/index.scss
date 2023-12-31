@@ -1,19 +1,48 @@
 @use "./scss/variables";
+@use "./scss/mixins";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
   min-height: 100vh;
   line-height: 1.5;
   font-weight: 400;
+  background-color: variables.$primary-color;
   font-family: variables.$ff-play-fair;
+  color: variables.$secondary-color;
+  overflow-x: hidden;
 }
 
 #root {
+  position: relative;
   width: 100%;
-  max-width: 1440px;
+  max-width: 1540px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 1rem 2rem 0 2rem;
+  display: grid;
+  gap: 50px;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer"
+  ;
+  grid-template-rows: min-content 100% min-content;
+
+  @include mixins.mediaQuery(lg) {
+    & {
+      padding: 1rem 1rem 0 1rem;
+    }
+  }
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
 }
