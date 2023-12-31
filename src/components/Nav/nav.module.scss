@@ -1,0 +1,79 @@
+@use "../../scss/variables";
+@use "../../scss/functions";
+@use "../../scss/mixins";
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h2 {
+    font-size: functions.pxToRem(32px);
+    text-transform: uppercase;
+    color: variables.$brand-logo-color;
+    @include mixins.flex($align: flex-start);
+
+    span {
+      color: variables.$secondary-color;
+      font-size: functions.pxToRem(24px);
+    }
+  }
+
+  ul {
+    display: flex;
+    gap: 20px;
+
+    & a[aria-current="page"] {
+      background-color: variables.$secondary-color;
+      border: 1px solid variables.$secondary-color;
+      color: variables.$black;
+    }
+
+    @include mixins.mediaQuery(lg) {
+      & {
+        padding: 120px 0 0 0;
+        padding-inline: 2rem;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        height: 100vh;
+        top: 0;
+        right: 0;
+        z-index: 1000;
+        width: 100%;
+        background-color: variables.$brand-logo-color;
+        transition: all 0.7s ease;
+
+        li {
+          width: min(100%, 50vw);
+        }
+      }
+    }
+  }
+}
+
+.hamburger {
+  display: none;
+
+  @include mixins.mediaQuery(lg) {
+    & {
+      cursor: pointer;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 2000;
+      display: block;
+      width: 32px;
+      height: 32px;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      &[aria-expanded="false"]+ul {
+        right: -100%;
+      }
+    }
+  }
+}

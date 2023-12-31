@@ -1,0 +1,65 @@
+@use "../../scss/variables";
+@use "../../scss/mixins";
+
+%icon-style {
+  color: variables.$primary-color;
+  border-radius: 50%;
+  width: 18.5px;
+  height: 18.5px;
+  padding: 3px;
+  transition: 0.3s ease;
+}
+
+.solid {
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 16px;
+  font-weight: 400;
+  font-family: variables.$ff-play-fair;
+  border: none;
+  background-color: variables.$border-color;
+  color: variables.$primary-color;
+  @include mixins.flex();
+  gap: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: variables.$btn-hover-color;
+    color: variables.$black;
+  }
+
+  &:hover svg {
+    transform: rotate(90deg);
+  }
+
+  svg {
+    @extend %icon-style;
+  }
+}
+
+.outlined {
+  @extend .solid;
+  background-color: transparent;
+  border: 1px solid variables.$border-color;
+  color: variables.$secondary-color;
+
+  &:hover {
+    border: 1px solid variables.$btn-hover-color;
+  }
+
+  svg {
+    @extend %icon-style;
+    background-color: #fff;
+  }
+}
+
+.text {
+  @extend .outlined;
+  border: none;
+
+  &:hover {
+    color: variables.$btn-hover-color;
+    background-color: transparent;
+    border: none;
+  }
+}

@@ -1,0 +1,27 @@
+@use "../scss/mixins";
+
+.header {
+    grid-area: header;
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
+    width: 100%;
+    display: grid;
+    row-gap: 80px;
+    column-gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    line-height: 1.2;
+
+    @include mixins.mediaQuery(sm) {
+        & {
+            grid-template-columns: 1fr;
+            column-gap: 0;
+            row-gap: 50px;
+        }
+    }
+}
