@@ -38,28 +38,28 @@ function Footer() {
         <div className={styles.contacts}>
           <p>contact information</p>
           <ul>
-            <li>nyeusiinteriordesign@gmail.com</li>
-            <li>+254712345678</li>
+            <li>
+              <Link to="mailto: nyeusiinteriordesign@gmail.com" variant="text">
+                nyeusiinteriordesign@gmail.com
+              </Link>
+            </li>
+            <li>
+              <Link to="tel: +254712345678" variant="text">
+                +254712345678
+              </Link>
+            </li>
           </ul>
         </div>
         <div className={styles.socials}>
           <p>our socials</p>
           <ul>
-            <li>
-              <Link to="#" variant="text">
-                twitter
-              </Link>
-            </li>
-            <li>
-              <Link to="#" variant="text">
-                facebook
-              </Link>
-            </li>
-            <li>
-              <Link to="#" variant="text">
-                instagram
-              </Link>
-            </li>
+            {["twitter", "facebook", "instagram"].map((item) => (
+              <li key={item}>
+                <Link to="#" variant="text">
+                  {item}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
         <p>
