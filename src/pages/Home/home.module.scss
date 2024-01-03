@@ -1,0 +1,223 @@
+@use "../../scss/variables";
+@use "../../scss/mixins";
+@use "../../scss/functions";
+
+.container {
+
+    h1 {
+        font-family: variables.$ff-bricolage-grotesque;
+        font-weight: 500;
+        font-size: calc(functions.pxToRem(33px) + 0.1vw);
+
+        @media screen and (min-width: 767px) {
+            & {
+                font-size: calc(functions.pxToRem(37px) + 0.4vw);
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            & {
+                font-size: calc(functions.pxToRem(48px) + 0.2vw);
+            }
+        }
+
+        @media screen and (min-width: 1206px) {
+            & {
+                font-size: calc(functions.pxToRem(58px) + 0.6vw);
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            & {
+                font-size: calc(functions.pxToRem(50px) + 0.2vw);
+            }
+        }
+
+        @media screen and (min-width: 1280px) {
+            & {
+                font-size: calc(functions.pxToRem(75px) + 0.6vw);
+            }
+        }
+    }
+
+
+}
+
+.hero_textbox {
+    max-width: 717px;
+    @include mixins.flex($align: start);
+    flex-direction: column;
+    gap: 20px;
+
+    @media screen and (min-width: 992px) {
+        & {
+            margin: 0 auto;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+
+    p {
+        font-size: calc(functions.pxToRem(15px) + 0.1vw);
+        width: 100%;
+        font-family: variables.$ff-lato;
+
+        @media screen and (min-width: 768px) {
+            & {
+                width: 78%;
+            }
+        }
+    }
+}
+
+.hero_img {
+    margin-top: 30px;
+    min-height: 219px;
+    background-image: url("../../assets/hero-image-small.jpg");
+    background-repeat: no-repeat;
+
+    @media screen and (min-width: 992px) {
+        & {
+            min-height: 546px;
+            background-image: url("../../assets/hero-image-big.jpg");
+            background-size: cover;
+        }
+    }
+}
+
+.more_info {
+    margin-block-start: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media screen and (min-width: 992px) {
+        & {
+            grid-template-columns: repeat(2, 1fr);
+            margin-block-start: 50px;
+            column-gap: 10px;
+        }
+    }
+}
+
+.one {
+    font-family: variables.$ff-bricolage-grotesque;
+    font-size: functions.pxToRem(24px);
+
+    @media screen AND (min-width: 992PX) {
+        & {
+            grid-column: 1/-1;
+            font-size: functions.pxToRem(30px);
+        }
+    }
+}
+
+.two {
+    background-image: url("../../assets//mobile-home-image-1.jpg");
+    background-repeat: no-repeat;
+    margin-block: 10px;
+    min-height: 260px;
+    background-size: contain;
+
+    @media screen and (min-width: 992px) {
+        & {
+            grid-column: 1/2;
+            background-image: url("../../assets/desktop-home-image-1.jpg");
+            min-height: 546px;
+        }
+    }
+}
+
+.three {
+    grid-row: 3/4;
+    background-image: url("../../assets/mobile-home-image-2.jpg");
+    background-repeat: no-repeat;
+    min-height: 260px;
+
+    @media screen and (min-width: 992px) {
+        grid-column: 1/-1;
+        background-image: url("../../assets/desktop-home-image-2.jpg");
+        background-size: cover;
+        min-height: 546px;
+    }
+}
+
+.four {
+    margin-block-start: 10px;
+    font-family: variables.$ff-lato;
+    font-size: calc(functions.pxToRem(15px) + 0.1vw);
+
+    & p:nth-of-type(1) {
+        display: none;
+    }
+
+    @media screen and (min-width: 992px) {
+        & {
+            grid-column: 2/-1;
+            @include mixins.flex();
+            flex-direction: column;
+            gap: 50px;
+            font-size: calc(functions.pxToRem(17px) + 0.1vw);
+
+            & p:nth-of-type(1) {
+                display: block;
+            }
+        }
+    }
+}
+
+.projects {
+    margin-block-start: 60px;
+}
+
+.projects_textbox {
+
+    @media screen and (min-width: 992px) {
+        & {
+            margin-block-end: 2rem;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    h2 {
+        font-family: variables.$ff-bricolage-grotesque;
+        font-size: calc(functions.pxToRem(23px) + 0.1vw);
+        margin-block-end: 5px;
+        line-height: 0.9;
+
+        @media screen and (min-width: 992px) {
+            & {
+                margin-block-end: 0;
+                font-size: calc(functions.pxToRem(63px) + 0.1vw);
+            }
+        }
+
+    }
+
+    p {
+        font-family: variables.$ff-lato;
+        font-size: calc(functions.pxToRem(15px) + 0.1vw);
+
+        @media screen and (min-width: 992px) {
+            & {
+                width: 43%;
+                // margin-top: 20px;
+            }
+        }
+
+    }
+}
+
+.projects_display {
+    display: grid;
+
+    @media screen and (min-width: 1024px) {
+        & {
+            padding: 1rem 0;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            border-block: 2px solid variables.$secondary-color;
+        }
+    }
+}
