@@ -5,7 +5,7 @@ import { MdClose, MdMenu } from "react-icons/md";
 import { routes } from "@/constants/index";
 
 function Nav() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav aria-labelledby="primary-navigation" className={styles.nav}>

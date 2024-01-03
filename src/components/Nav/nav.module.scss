@@ -59,7 +59,7 @@
     & {
       cursor: pointer;
       position: absolute;
-      top: 1rem;
+      top: 1.2rem;
       right: 1rem;
       z-index: 2000;
       display: block;
@@ -71,8 +71,8 @@
         height: 100%;
       }
 
-      &[aria-expanded="false"]+ul {
-        right: -100%;
+      &[aria-expanded="false"] + ul {
+        right: -100vw;
       }
     }
   }

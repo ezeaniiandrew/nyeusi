@@ -2,76 +2,64 @@
 @use "../../scss/functions";
 @use "../../scss/mixins";
 
-
 .card {
-    padding: 0.5rem 0;
-    border-block-end: 2px solid variables.$secondary-color;
-    // border: 2px solid red;
+  padding: 0.5rem 0;
+  border-block-end: 2px solid variables.$secondary-color;
 
-    img {
-        border-radius: 8px;
-        width: 100%;
+  &_img {
+    border-radius: 8px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    & {
+      border-block-end: none;
+      padding: 0;
+
+      &:nth-child(3),
+      &:nth-child(4) {
+        padding-block-start: 2rem;
+        border-block-start: 2px solid variables.$secondary-color;
+      }
+
+      &:nth-child(2),
+      &:nth-child(4) {
+        position: relative;
+      }
+
+      &:nth-child(2)::before,
+      &:nth-child(4)::before {
+        content: "";
+        width: 2px;
+        height: 100%;
+        background-color: variables.$secondary-color;
+        position: absolute;
+        left: -1rem;
+        top: 0;
+      }
+
+      &:nth-child(4)::before {
+        top: 1rem;
+      }
     }
+  }
+
+  &_body {
+    @include mixins.flex($justify: space-between);
 
     @media screen and (min-width: 1024px) {
-        & {
-            border-block-end: none;
-            padding: 0;
-
-            &:nth-child(3),
-            &:nth-child(4) {
-                padding-block-start: 2rem;
-                border-block-start: 2px solid variables.$secondary-color;
-            }
-
-            // &:nth-child(4) {
-            //     border-block-start: 2px solid variables.$secondary-color;
-            // }
-
-            // &:nth-child(2) {
-            //     border-inline-start: 2px solid variables.$secondary-color;
-            // }
-
-            &:nth-child(2),
-            &:nth-child(4) {
-                position: relative;
-            }
-
-            &:nth-child(2)::before,
-            &:nth-child(4)::before {
-                content: "";
-                width: 2px;
-                height: 100%;
-                background-color: variables.$secondary-color;
-                position: absolute;
-                left: -1rem;
-                top: 0;
-            }
-
-            &:nth-child(4)::before {
-                top: 1rem;
-            }
-        }
+      & {
+        margin-block-start: 2rem;
+      }
     }
 
-    &_body {
-        @include mixins.flex($justify: space-between);
-
-        @media screen and (min-width: 1024px) {
-            & {
-                margin-block-start: 2rem;
-            }
-        }
-
-        p {
-            width: 50%;
-            font-family: variables.$ff-lato;
-            font-size: calc(functions.pxToRem(17px) + 0.1vw);
-        }
-
-        a {
-            width: 30%;
-        }
+    p {
+      width: 50%;
+      font-family: variables.$ff-lato;
+      font-size: calc(functions.pxToRem(17px) + 0.1vw);
     }
 
+    a {
+      width: 30%;
+    }
+  }
 }
