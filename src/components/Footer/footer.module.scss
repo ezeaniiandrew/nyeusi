@@ -69,6 +69,10 @@
 
         a {
             color: variables.$brand-logo-color;
+
+            &:hover {
+                color: variables.$brand-logo-color-dark;
+            }
         }
 
         @media screen and (min-width: 767px) {
@@ -93,7 +97,6 @@
 
     & li>a {
         justify-content: initial;
-        padding-left: 0;
     }
 
     @media screen and (min-width: 767px) {
@@ -113,6 +116,8 @@
         font-size: 24px;
         text-transform: uppercase;
         border-bottom: 2px solid variables.$secondary-color;
+        padding-left: 0.5rem;
+        padding-bottom: 0.1rem;
 
         @media screen and (min-width: 767px) and (max-width: 992px) {
             & {
