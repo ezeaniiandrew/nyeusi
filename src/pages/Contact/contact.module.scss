@@ -1,0 +1,94 @@
+@use "../../scss/variables";
+@use "../../scss/functions";
+@use "../../scss/mixins";
+
+.wrapper {
+    display: grid;
+
+    &>article {
+        display: grid;
+        gap: 16px;
+
+        &>div {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid variables.$secondary-color;
+
+            h2 {
+                font-size: calc(functions.pxToRem(33px) + 0.1vw);
+                font-weight: inherit;
+
+                &+p {
+                    font-family: variables.$ff-lato;
+                }
+            }
+
+            &>ul {
+                display: grid;
+                gap: 20px;
+
+                &>li {
+                    @include mixins.flex($justify: flex-start);
+                    gap: 4px;
+                    font-family: variables.$ff-lato;
+                    line-height: 1;
+                    font-size: calc(functions.pxToRem(15px) + 0.1vw);
+
+                    span {
+                        width: 24px;
+                        height: 24px;
+                        padding: 4px;
+                        background-color: variables.$secondary-color;
+                        border-radius: 50%;
+
+                        &>svg {
+                            width: 100%;
+                            height: 100%;
+                            color: variables.$black;
+                        }
+
+                    }
+
+                    &:nth-of-type(2) {
+                        text-transform: lowercase;
+                    }
+                }
+            }
+
+            &>div {
+                margin-block-start: 20px;
+                border: 1px solid red;
+                @include mixins.flex($justify: space-between);
+
+                &>span {
+                    width: 34px;
+                    height: 34px;
+                    padding: 8px;
+                    background-color: #fff;
+                    border-radius: 50%;
+
+                    &>svg {
+                        fill: variables.$black;
+
+
+                    }
+
+                    &:nth-of-type(2)>svg {
+                        fill: variables.$facebook-color;
+                    }
+
+                    &:nth-of-type(5)>img {
+                        object-fit: cover;
+                    }
+
+                }
+
+            }
+
+        }
+    }
+
+    &>p {
+        display: none;
+    }
+}

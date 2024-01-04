@@ -16,7 +16,6 @@ body {
   font-family: variables.$ff-play-fair;
   color: variables.$secondary-color;
   text-transform: uppercase;
-  outline: 2px solid red;
 }
 
 #root {
@@ -46,4 +45,13 @@ img {
   max-inline-size: 100%;
   object-fit: contain;
   border-radius: inherit;
+}
+
+h2 {
+  font-family: variables.$ff-bricolage-grotesque;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
 }

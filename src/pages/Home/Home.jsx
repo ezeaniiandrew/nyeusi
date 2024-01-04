@@ -3,7 +3,7 @@ import Link from "@/components/Link/Link";
 import styles from "./home.module.scss";
 import { pastProjectsData } from "@/constants/index";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
-// import heroImage from "@/assets/hero-image-small.jpg";
+
 function Home() {
   return (
     <>
