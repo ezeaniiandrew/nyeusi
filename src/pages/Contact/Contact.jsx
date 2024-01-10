@@ -1,14 +1,7 @@
-import { CiMail, CiLocationOn } from "react-icons/ci";
-import { BsTelephone } from "react-icons/bs";
-import { FaXTwitter } from "react-icons/fa6";
-import {
-  FaFacebook,
-  FaInstagramSquare,
-  FaLinkedin,
-  FaYoutube,
-} from "react-icons/fa";
 import styles from "./contact.module.scss";
-import instagramLogo from "@/assets/instagram-logo.jpg";
+import Form from "./components/Form/Form";
+import IconsBox from "./components/IconsBox/IconsBox";
+import ContactAddress from "./components/ContactAddress/ContactAddress";
 
 function Contact() {
   return (
@@ -24,50 +17,12 @@ function Contact() {
           </p>
         </div>
         <div>
-          <ul>
-            <li>
-              <span>
-                <BsTelephone />
-              </span>
-              +254712345678
-            </li>
-            <li>
-              <span>
-                <CiMail />
-              </span>
-              nyeusiinteriordesign@gmail.com
-            </li>
-            <li>
-              <span>
-                <CiLocationOn />
-              </span>
-              tom mboya street, nairobi, kenya.
-            </li>
-          </ul>
-          <div>
-            <span>
-              <FaXTwitter />
-            </span>
-            <span>
-              <FaFacebook />
-            </span>
-            <span>
-              <FaLinkedin />
-            </span>
-            <span>
-              <FaYoutube />
-            </span>
-            <span>
-              <img src={instagramLogo} alt="go to our instagram page" />
-            </span>
-            {/* <span>
-              <FaInstagramSquare />
-            </span> */}
-          </div>
+          <ContactAddress />
+          <IconsBox />
         </div>
       </article>
-      <div>image</div>
-      <form>form</form>
+      <div></div>
+      <Form />
       <p>
         Feel free to connect with Nyeusi Interior Design House for inquiries,
         collaborations, or to share your vision for your dark luxurious

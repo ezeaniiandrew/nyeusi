@@ -8,7 +8,6 @@
 }
 
 body {
-  width: 100vw;
   min-height: 100vh;
   line-height: 1.5;
   font-weight: 400;
@@ -21,7 +20,7 @@ body {
 #root {
   position: relative;
   width: 100%;
-  max-width: 1540px;
+  max-width: 1400px;
   margin: 0 auto;
   display: grid;
   gap: 100px;

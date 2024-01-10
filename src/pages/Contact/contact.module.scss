@@ -4,6 +4,11 @@
 
 .wrapper {
     display: grid;
+    gap: 40px;
+
+    @media screen and (min-width: 992px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
     &>article {
         display: grid;
@@ -22,69 +27,22 @@
                     font-family: variables.$ff-lato;
                 }
             }
+        }
+    }
 
-            &>ul {
-                display: grid;
-                gap: 20px;
+    &>img {
+        width: 100%;
+        grid-column: 1/-1;
+    }
 
-                &>li {
-                    @include mixins.flex($justify: flex-start);
-                    gap: 4px;
-                    font-family: variables.$ff-lato;
-                    line-height: 1;
-                    font-size: calc(functions.pxToRem(15px) + 0.1vw);
+    &>div {
+        border-radius: 8px;
+        @include mixins.backgroundImage("../../assets/contact-page-image-mobile.jpg", "../../assets/contact-page-image-desktop.jpg", 218px, 546px);
 
-                    span {
-                        width: 24px;
-                        height: 24px;
-                        padding: 4px;
-                        background-color: variables.$secondary-color;
-                        border-radius: 50%;
-
-                        &>svg {
-                            width: 100%;
-                            height: 100%;
-                            color: variables.$black;
-                        }
-
-                    }
-
-                    &:nth-of-type(2) {
-                        text-transform: lowercase;
-                    }
-                }
+        @media screen and (min-width: 992px) {
+            & {
+                grid-column: 1/-1;
             }
-
-            &>div {
-                margin-block-start: 20px;
-                border: 1px solid red;
-                @include mixins.flex($justify: space-between);
-
-                &>span {
-                    width: 34px;
-                    height: 34px;
-                    padding: 8px;
-                    background-color: #fff;
-                    border-radius: 50%;
-
-                    &>svg {
-                        fill: variables.$black;
-
-
-                    }
-
-                    &:nth-of-type(2)>svg {
-                        fill: variables.$facebook-color;
-                    }
-
-                    &:nth-of-type(5)>img {
-                        object-fit: cover;
-                    }
-
-                }
-
-            }
-
         }
     }
 

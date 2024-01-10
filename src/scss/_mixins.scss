@@ -6,7 +6,21 @@
   justify-content: $justify;
 }
 
+@mixin backgroundImage($mobileUrl, $desktopUrl, $mobileHeight, $desktopHeight) {
+  background-image: url($mobileUrl);
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 100%;
+  height: $mobileHeight;
 
+  @media screen and (min-width: 992px) {
+    & {
+      background-image: url($desktopUrl);
+      height: $desktopHeight;
+
+    }
+  }
+}
 
 $breakpoints: (
   sm: functions.pxToRem(600px),

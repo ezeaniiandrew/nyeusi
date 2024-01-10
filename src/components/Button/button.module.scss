@@ -1,0 +1,13 @@
+@use "../../scss/variables";
+@use "../../scss/functions";
+
+.btn {
+    width: 100%;
+    padding: 6px 10px;
+    border-radius: 16px;
+    border: none;
+    background-color: variables.$border-color;
+    color: variables.$primary-color;
+    font-family: variables.$ff-lato;
+    font-size: calc(functions.pxToRem(15px) + 0.1vw);
+}

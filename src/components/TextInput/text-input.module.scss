@@ -1,0 +1,44 @@
+@use "../../scss/variables";
+@use "../../scss/functions";
+
+.text_label {
+    display: block;
+    margin-block: 7px;
+    color: variables.$white;
+    font-size: calc(functions.pxToRem(17px) + 0.1vw);
+    font-family: variables.$ff-lato;
+
+    &:has(+textarea:not(:focus):not(:active)) {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 1px;
+    }
+
+    &+input,
+    &+textarea {
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        padding: 10px 0 4px;
+        color: variables.$form-border-color;
+
+        &::placeholder {
+            color: variables.$form-border-color;
+            font-family: variables.$ff-lato;
+        }
+    }
+
+    &+input {
+        border-block-end: 2px solid variables.$form-border-color;
+    }
+
+    &+textarea {
+        border-radius: 8px;
+        padding-inline-start: 4px;
+        min-height: functions.pxToRem(170px);
+        border: 2px solid variables.$form-border-color;
+    }
+}
