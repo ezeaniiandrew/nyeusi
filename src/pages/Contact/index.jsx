@@ -2,11 +2,13 @@ import styles from "./contact.module.scss";
 import Form from "./components/Form/Form";
 import IconsBox from "./components/IconsBox/IconsBox";
 import ContactAddress from "./components/ContactAddress/ContactAddress";
+// import contactImage from "../../assets/contact-page-image-mobile.jpg";
+import imageUrl from "../../assets/contact-page-image-desktop.jpg";
 
 function Contact() {
   return (
-    <section className={styles.wrapper}>
-      <article className={styles.col_1}>
+    <>
+      <article className={styles.contact}>
         <div>
           <h2>Contact Us</h2>
           <p>
@@ -21,15 +23,17 @@ function Contact() {
           <IconsBox />
         </div>
       </article>
-      <div></div>
       <Form />
+      <div className={styles.img}>
+        <img src={imageUrl} alt="" />
+      </div>
       <p>
         Feel free to connect with Nyeusi Interior Design House for inquiries,
         collaborations, or to share your vision for your dark luxurious
         interiors. We eagerly anticipate the opportunity to bring your dreams to
         life.
       </p>
-    </section>
+    </>
   );
 }
 

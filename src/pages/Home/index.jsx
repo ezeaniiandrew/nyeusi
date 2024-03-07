@@ -3,6 +3,8 @@ import Link from "@/components/Link/Link";
 import styles from "./home.module.scss";
 import { pastProjectsData } from "@/constants/index";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
+import mobileHeroImage from "@/assets/hero-image-small.jpg";
+import desktopHeroImage from "@/assets/hero-image-big.jpg";
 
 function Home() {
   return (
@@ -22,7 +24,16 @@ function Home() {
             hire us
           </Link>
         </div>
-        <div className={styles.hero_img}></div>
+
+        <div className={styles.hero_img}>
+          <img
+            src={mobileHeroImage}
+            alt=""
+            srcSet={`${mobileHeroImage} 320w, ${desktopHeroImage} 626w`}
+            sizes="(min-width: 1024px) 45vw,"
+            loading="lazy"
+          />
+        </div>
         <div className={styles.more_info}>
           <p className={styles.one}>
             Welcome to the realm of Nyeusi Interior Design House, where the art

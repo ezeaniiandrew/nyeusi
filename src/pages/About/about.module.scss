@@ -1,0 +1,30 @@
+@use "../../scss/variables";
+@use "../../scss/functions";
+@use "../../scss/mixins";
+
+.text1 {
+    grid-column: 1/-1;
+    font-size: calc(functions.pxToRem(30px));
+    font-family: variables.$ff-bricolage-grotesque;
+    margin-block-end: 20px;
+}
+
+.subText {
+    font-family: variables.$ff-lato;
+    grid-column: 1/-1;
+    margin-block-end: 20px;
+
+}
+
+.btn {
+    grid-column: 1/8;
+    padding: 10px 14px;
+}
+
+.img {
+    grid-column: 1/-1;
+    height: 218px;
+    border: 2px solid yellow;
+    border-radius: 8px;
+    margin-block-end: 20px;
+}

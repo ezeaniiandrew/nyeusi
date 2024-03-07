@@ -3,10 +3,11 @@ import clsx from "clsx";
 import styles from "./link.module.scss";
 import { NavLink } from "react-router-dom";
 
-function Link({ children, Icon, variant, to, onClick }) {
+function Link({ children, Icon, variant, to, onClick, className }) {
   const validVariants = ["outlined", "solid", "text"];
   const linkStyles = clsx({
     [styles[variant]]: variant && validVariants.includes(variant),
+    [className]: className,
   });
 
   return (

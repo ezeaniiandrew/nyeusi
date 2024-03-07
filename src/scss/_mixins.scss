@@ -12,11 +12,13 @@
   background-repeat: no-repeat;
   max-width: 100%;
   height: $mobileHeight;
+  height: 420px;
 
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 602px) {
     & {
       background-image: url($desktopUrl);
       height: $desktopHeight;
+      // background-size: contain;
 
     }
   }

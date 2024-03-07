@@ -1,10 +1,15 @@
 @use "./scss/variables";
 @use "./scss/mixins";
+@use "./scss/functions";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.col-5 {
+  border: 2px solid red;
 }
 
 body {
@@ -41,7 +46,7 @@ a {
 }
 
 img {
-  max-inline-size: 100%;
+  inline-size: 100%;
   object-fit: contain;
   border-radius: inherit;
 }

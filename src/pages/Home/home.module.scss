@@ -3,7 +3,7 @@
 @use "../../scss/functions";
 
 .container {
-  width: 100%;
+  grid-column: 1/-1;
 
   h1 {
     font-family: variables.$ff-bricolage-grotesque;
@@ -36,7 +36,7 @@
 
     @media screen and (min-width: 1280px) {
       & {
-        font-size: calc(functions.pxToRem(68px) + 0.1vw);
+        font-size: calc(functions.pxToRem(67px) + 0.1vw);
       }
     }
   }
@@ -71,17 +71,6 @@
 
 .hero_img {
   margin-top: 30px;
-  min-height: 219px;
-  background-image: url("../../assets/hero-image-small.jpg");
-  background-repeat: no-repeat;
-
-  @media screen and (min-width: 992px) {
-    & {
-      min-height: 546px;
-      background-image: url("../../assets/hero-image-big.jpg");
-      background-size: cover;
-    }
-  }
 }
 
 .more_info {
@@ -165,6 +154,7 @@
 }
 
 .projects {
+  grid-column: 1/-1;
   margin-block-start: 60px;
 }
 
@@ -186,7 +176,7 @@
     @media screen and (min-width: 992px) {
       & {
         margin-block-end: 0;
-        font-size: calc(functions.pxToRem(63px) + 0.1vw);
+        font-size: calc(functions.pxToRem(60px) + 0.1vw);
       }
     }
   }
