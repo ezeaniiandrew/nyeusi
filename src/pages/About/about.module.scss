@@ -2,29 +2,39 @@
 @use "../../scss/functions";
 @use "../../scss/mixins";
 
-.text1 {
-    grid-column: 1/-1;
-    font-size: calc(functions.pxToRem(30px));
-    font-family: variables.$ff-bricolage-grotesque;
-    margin-block-end: 20px;
+.heading {
+  grid-column: 1/-1;
+  //   font-size: calc(functions.pxToRem(30px));
+  font-size: calc(functions.pxToRem(50px));
+  font-family: variables.$ff-bricolage-grotesque;
+  margin-block-end: 20px;
 }
 
 .subText {
-    font-family: variables.$ff-lato;
-    grid-column: 1/-1;
-    margin-block-end: 20px;
+  font-family: variables.$ff-lato;
+  margin-block: 50px;
+  font-size: 18px;
 
+  &--1 {
+    @extend .subText;
+    grid-column: 1/7;
+    margin-inline-end: 3.5rem;
+  }
+
+  &--2 {
+    @extend .subText;
+    grid-column: 7/-1;
+    margin-inline-start: 3.5rem;
+  }
 }
 
 .btn {
-    grid-column: 1/8;
-    padding: 10px 14px;
+  grid-column: 1/8;
+  padding: 10px 14px;
 }
 
 .img {
-    grid-column: 1/-1;
-    height: 218px;
-    border: 2px solid yellow;
-    border-radius: 8px;
-    margin-block-end: 20px;
+  grid-column: 1/-1;
+  border-radius: 8px;
+  margin-block-end: 20px;
 }

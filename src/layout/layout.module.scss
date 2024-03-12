@@ -10,12 +10,15 @@
   margin: 0 auto;
   background-color: variables.$primary-color;
   padding: 1rem;
+  padding-inline: 3rem;
+  z-index: 100000;
 }
 
 .main {
   margin-block-start: 40px;
   grid-area: main;
   padding: 1rem;
+  padding-inline: 3rem;
   display: grid;
   // gap: 40px;
   grid-template-columns: repeat(12, 1fr);
@@ -26,6 +29,7 @@
 
 .footer {
   padding: 1rem;
+  padding-inline: 3rem;
   grid-area: footer;
   display: grid;
   row-gap: 80px;
