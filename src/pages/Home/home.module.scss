@@ -104,13 +104,14 @@
   background-repeat: no-repeat;
   margin-block: 10px;
   min-height: 260px;
-  background-size: contain;
+  background-size: cover;
 
   @media screen and (min-width: 992px) {
     & {
       grid-column: 1/2;
       background-image: url("../../assets/desktop-home-image-1.jpg");
       min-height: 546px;
+      background-size: contain;
     }
   }
 }
@@ -120,11 +121,11 @@
   background-image: url("../../assets/mobile-home-image-2.jpg");
   background-repeat: no-repeat;
   min-height: 260px;
+  background-size: cover;
 
   @media screen and (min-width: 992px) {
     grid-column: 1/-1;
     background-image: url("../../assets/desktop-home-image-2.jpg");
-    background-size: cover;
     min-height: 546px;
   }
 }

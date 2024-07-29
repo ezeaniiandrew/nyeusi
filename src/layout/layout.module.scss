@@ -12,6 +12,10 @@
   padding: 1rem;
   padding-inline: 3rem;
   z-index: 100000;
+
+  @media screen and (max-width: 992px) {
+    padding: 1rem;
+  }
 }
 
 .main {
@@ -22,9 +26,11 @@
   display: grid;
   // gap: 40px;
   grid-template-columns: repeat(12, 1fr);
-  // @media screen and (min-width: 992px) {
-  //   grid-template-columns: repeat(2, 1fr);
-  // }
+
+  @media screen and (max-width: 992px) {
+    padding: 1rem;
+    // grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .footer {
@@ -42,6 +48,7 @@
       grid-template-columns: 1fr;
       column-gap: 0;
       row-gap: 50px;
+      padding: 1rem;
     }
   }
 }

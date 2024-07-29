@@ -31,18 +31,18 @@
 
     @include mixins.mediaQuery(lg) {
       & {
-        padding: 120px 0 0 0;
+        padding: 150px 0 0 0;
         padding-inline: 2rem;
         flex-direction: column;
         align-items: center;
-        position: absolute;
-        height: 100vh;
+        position: fixed;
+        height: 100%;
         top: 0;
         right: 0;
         z-index: 1000;
         width: 100%;
         background-color: variables.$brand-logo-color;
-        transition: all 0.7s ease;
+        animation: slide-in 0.7s ease;
 
         li {
           width: min(100%, 50vw);
@@ -73,7 +73,19 @@
 
       &[aria-expanded="false"] + ul {
         right: -100vw;
+        display: none;
       }
     }
+  }
+}
+
+@keyframes slide-in {
+  from {
+    right: -100vw;
+    display: none;
+  }
+  to {
+    right: 0;
+    display: flex;
   }
 }
