@@ -1,47 +1,58 @@
-@use "functions";
+@use "functions" as *;
 
 @mixin flex($align: center, $justify: center) {
-  display: flex;
-  align-items: $align;
-  justify-content: $justify;
-}
-
-@mixin backgroundImage($mobileUrl, $desktopUrl, $mobileHeight, $desktopHeight) {
-  background-image: url($mobileUrl);
-  background-size: cover;
-  background-repeat: no-repeat;
-  max-width: 100%;
-  height: $mobileHeight;
-  height: 420px;
-
-  @media screen and (min-width: 602px) {
-    & {
-      background-image: url($desktopUrl);
-      height: $desktopHeight;
-      // background-size: contain;
-
-    }
+  @if check-args(($align, $justify), string, string) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
   }
 }
 
-$breakpoints: (
-  sm: functions.pxToRem(600px),
-  md: functions.pxToRem(768px),
-  lg: functions.pxToRem(992px),
-  xl: functions.pxToRem(1024px),
-  xxl: functions.pxToRem(1200px),
-  xxxl: functions.pxToRem(1400px),
+@mixin backgroundImage($mobileUrl, $mobileHeight, $desktopUrl, $desktopHeight) {
+  @if check-args(
+    ($mobileUrl, $mobileHeight, $desktopUrl, $desktopHeight),
+    string,
+    number,
+    string,
+    number
+  )
+  {
+    background-image: url($mobileUrl);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: $mobileHeight;
 
-);
+    @include mediaQuery(md) {
+      & {
+        background-image: url($desktopUrl);
+        height: $desktopHeight;
+      }
+    }
+  }
+}
 
 @mixin mediaQuery($breakpoint) {
-  @if map-has-key($map: $breakpoints, $key: $breakpoint) {
-    @media screen and (max-width: map-get($breakpoints, $breakpoint)) {
-      @content
-    }
-  }
+  $breakpoints: (
+    sm: pxToResponsiveUnit(600px, em),
+    md: pxToResponsiveUnit(768px, em),
+    lg: pxToResponsiveUnit(992px, em),
+    xl: pxToResponsiveUnit(1024px, em),
+    xxl: pxToResponsiveUnit(1280px, em),
+    xxxl: pxToResponsiveUnit(1400px, em),
+  );
 
-  @else {
-    @error "Invalid breakpoint: #{$breakpoint}. Please use one of: #{map-keys($breakpoints)}"
+  @if map-has-key($map: $breakpoints, $key: $breakpoint) {
+    @if ($breakpoint == "sm") {
+      @media screen and (max-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+      }
+    } @else {
+      @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+      }
+    }
+  } @else {
+    @error "Invalid breakpoint: #{$breakpoint}. Please use one of: #{map-keys($breakpoints)}";
   }
 }

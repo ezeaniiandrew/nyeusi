@@ -1,10 +1,9 @@
 import { MdArrowOutward } from "react-icons/md";
-import Link from "@/components/Link/Link";
 import styles from "./home.module.scss";
 import { pastProjectsData } from "@/constants/index";
-import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import mobileHeroImage from "@/assets/hero-image-small.jpg";
 import desktopHeroImage from "@/assets/hero-image-big.jpg";
+import { Link, ProjectCard } from "@/components";
 
 function Home() {
   return (
@@ -17,7 +16,7 @@ function Home() {
           <p>
             We are a modern interior design house with a focus on cosy, sleek
             and rich inviting abodes dubbed in dark colors and textures turning
-            your space into a luxurious space that your neigboUrs can&#39;t get
+            your space into a luxurious space that your neigbours can&#39;t get
             enough of.
           </p>
           <Link to="/" variant="solid" Icon={MdArrowOutward}>
@@ -25,25 +24,24 @@ function Home() {
           </Link>
         </div>
 
-        <div className={styles.hero_img}>
-          <img
-            src={mobileHeroImage}
-            alt=""
-            srcSet={`${mobileHeroImage} 320w, ${desktopHeroImage} 626w`}
-            sizes="(min-width: 1024px) 45vw,"
-            loading="lazy"
-          />
-        </div>
+        <img
+          src={mobileHeroImage}
+          alt=""
+          srcSet={`${mobileHeroImage} 320w, ${desktopHeroImage} 626w`}
+          sizes="(min-width: 1024px) 45vw,"
+          loading="lazy"
+        />
         <div className={styles.more_info}>
-          <p className={styles.one}>
+          <p>
             Welcome to the realm of Nyeusi Interior Design House, where the art
             of crafting dark luxurious interiors finds its ultimate expression.
             We are on a dedicated mission to bring forth a symphony of
             sophistication, aesthetics, and functionality in the realm of
             interior design.
           </p>
-          <div className={styles.two}></div>
-          <div className={styles.four}>
+          <div className={styles.image_one}></div>
+          <div className={styles.image_two}></div>
+          <div className={styles.textbox}>
             <p>
               In the heart of Nyeusi, the allure of darkness and luxury is woven
               into our very essence. We have embarked on a journey that
@@ -52,14 +50,13 @@ function Home() {
               commitment to creating spaces that define luxury.
             </p>
             <p>
-              our mission is clear - to offer interior design and products that
+              Our mission is clear - to offer interior design and products that
               personify timeless elegance. We are driven by a passion for the
               dark aesthetic and a commitment to the enduring quality of our
               creations. We believe in delivering luxury, not as a mere concept,
               but as a tangible experience within the spaces we design.
             </p>
           </div>
-          <div className={styles.three}></div>
         </div>
       </section>
       <section className={styles.projects}>

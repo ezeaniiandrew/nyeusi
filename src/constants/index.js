@@ -8,7 +8,7 @@ import mobilePastProject2 from "@/assets/mobile-home-project-image-2.jpg";
 import mobilePastProject3 from "@/assets/mobile-home-project-image-3.jpg";
 import mobilePastProject4 from "@/assets/mobile-home-project-image-4.jpg";
 
-export const routes = [
+export const navLinks = [
   { path: "/", name: "home" },
   { path: "/projects", name: "projects" },
   { path: "about", name: "about us" },
@@ -17,17 +17,17 @@ export const routes = [
 
 export const pastProjectsData = [
   {
-    text: "CONTEMPORARY INTERIOR BOX",
+    text: "Contemporary interior box",
     to: "/projects",
     images: [mobilePastProject1, desktopPastProject1],
   },
   {
-    text: "SNOHETTA",
+    text: "Snohetta",
     to: "/projects",
     images: [mobilePastProject2, desktopPastProject2],
   },
   {
-    text: "THE GORDON",
+    text: "The Gordon",
     to: "/projects",
     images: [mobilePastProject3, desktopPastProject3],
   },

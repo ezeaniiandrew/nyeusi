@@ -1,20 +1,21 @@
-@use "../../scss/variables";
-@use "../../scss/functions";
+@use "@/scss/variables" as *;
+@use "@/scss/functions" as *;
+@use "@/scss/mixins" as *;
 
 .btn {
-    width: 100%;
-    padding: 6px 10px;
-    border-radius: 16px;
-    border: none;
-    background-color: variables.$border-color;
-    color: variables.$primary-color;
-    font-family: variables.$ff-lato;
-    font-size: calc(functions.pxToRem(15px) + 0.1vw);
-    font-weight: 600;
+  width: 100%;
+  padding: 6px 10px;
+  border-radius: 16px;
+  border: none;
+  background-color: $border-color;
+  color: $primary-color;
+  font-family: $ff-lato;
+  font-size: calc(pxToResponsiveUnit(15px) + 0.1vw);
+  font-weight: 600;
 
-    @media screen and (min-width: 992px) {
-        & {
-            padding: 10px;
-        }
+  @include mediaQuery(lg) {
+    & {
+      padding: 10px;
     }
+  }
 }

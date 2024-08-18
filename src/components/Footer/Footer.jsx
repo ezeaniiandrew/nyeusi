@@ -1,4 +1,4 @@
-import { routes } from "@/constants/index";
+import { navLinks } from "@/constants";
 import Link from "../Link/Link";
 import styles from "./footer.module.scss";
 
@@ -6,30 +6,30 @@ function Footer() {
   return (
     <>
       <div className={styles.company}>
-        <h2>Nyeusi</h2>
         <p>
-          <span>Interior</span>
+          <span>Nyeusi</span>
+          Interior
           <span>design house</span>
         </p>
         <p>/nyeusi/ (noun)</p>
-        <p>an East African Swahili word used to refer to the color black </p>
+        <p>An East African Swahili word used to refer to the color black </p>
       </div>
       <div className={styles.description}>
         <p>
-          WE BELIEVE THAT THE WAY TO CREATE AND DESIGN A SPACE THAT IS UNIQUE
-          AND TRULY YOURS IS BY WORKING WITH A DESIGNER THAT YOU ARE IN SYNC
-          WITH. that is why we will pair with a designer(s) that you truly
-          resonate with, some with over 30 years experience.
+          We believe that the way to create a design that is unique and truly
+          yours is by working with a designer you are in sync with that is why
+          we will pair with a designer(s) that you truly resonate with, some
+          with over 30 years experience.{" "}
         </p>
       </div>
       <div className={styles.nav}>
         <div className={styles.links}>
           <p>Links</p>
           <ul>
-            {routes.map((route) => (
-              <li key={route.name}>
-                <Link to={route.path} variant="text">
-                  {route.name}
+            {navLinks.map((link) => (
+              <li key={link.name}>
+                <Link to={link.path} variant="text">
+                  {link.name}
                 </Link>
               </li>
             ))}

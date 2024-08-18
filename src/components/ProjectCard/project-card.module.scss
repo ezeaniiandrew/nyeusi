@@ -1,65 +1,32 @@
-@use "../../scss/variables";
-@use "../../scss/functions";
-@use "../../scss/mixins";
+@use "@/scss/variables" as *;
+@use "@/scss/functions" as *;
+@use "@/scss/mixins" as *;
 
 .card {
-  padding: 0.5rem 0;
-  border-block-end: 2px solid variables.$secondary-color;
+  border: 1px solid $card-border-color;
+  border-radius: 12px;
 
   &_img {
-    border-radius: 8px;
-  }
-
-  @media screen and (min-width: 1024px) {
-    & {
-      border-block-end: none;
-      padding: 0;
-
-      &:nth-child(3),
-      &:nth-child(4) {
-        padding-block-start: 2rem;
-        border-block-start: 2px solid variables.$secondary-color;
-      }
-
-      &:nth-child(2),
-      &:nth-child(4) {
-        position: relative;
-      }
-
-      &:nth-child(2)::before,
-      &:nth-child(4)::before {
-        content: "";
-        width: 2px;
-        height: 100%;
-        background-color: variables.$secondary-color;
-        position: absolute;
-        left: -1rem;
-        top: 0;
-      }
-
-      &:nth-child(4)::before {
-        top: 1rem;
-      }
-    }
+    border-top-right-radius: inherit;
+    border-top-left-radius: inherit;
+    margin-block-end: 28px;
   }
 
   &_body {
-    @include mixins.flex($justify: space-between);
+    @include flex(initial, space-between);
+    flex-direction: column;
+    padding-inline: 8px;
+    padding-block-end: 12px;
+    row-gap: 16px;
 
-    @media screen and (min-width: 1024px) {
-      & {
-        margin-block-start: 2rem;
-      }
+    @include mediaQuery(xl) {
+      flex-direction: row;
     }
 
     p {
-      width: 50%;
-      font-family: variables.$ff-lato;
-      font-size: calc(functions.pxToRem(17px) + 0.1vw);
-    }
-
-    a {
-      width: 30%;
+      font-family: $ff-lato;
+      font-size: pxToResponsiveUnit(18px);
+      letter-spacing: -0.03em;
     }
   }
 }

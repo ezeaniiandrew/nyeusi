@@ -1,183 +1,153 @@
-@use "../../scss/functions";
-@use "../../scss/variables";
-@use "../../scss/mixins";
+@use "@/scss/functions" as *;
+@use "@/scss/variables" as *;
+@use "@/scss/mixins" as *;
 
 .company {
-    font-size: min(functions.getFluidFontSize($minFontSize: 20, $maxFontSize: 24), functions.pxToRem(24px));
-    color: variables.$btn-hover-color;
-    max-inline-size: 40ch;
+  font-size: pxToResponsiveUnit(18px);
+  max-inline-size: min(448px, 100%);
+  letter-spacing: -0.03em;
 
-    span {
-        display: block;
-        color: variables.$secondary-color;
-        text-transform: capitalize;
+  @include mediaQuery(md) {
+    font-size: pxToResponsiveUnit(24px);
+  }
+
+  p,
+  span {
+    color: $secondary-color;
+  }
+
+  span {
+    display: block;
+    text-transform: capitalize;
+  }
+
+  p:has(span) {
+    font-weight: 300;
+    font-size: pxToResponsiveUnit(24px);
+    margin-block-end: 20px;
+
+    span:is(:first-child) {
+      color: $btn-hover-color;
     }
 
-    p+p {
-        color: variables.$secondary-color;
+    & + p + p {
+      margin-block-start: 14px;
+      font-size: pxToResponsiveUnit(16px);
 
-        &::first-letter {
-            text-transform: uppercase;
-        }
+      @include mediaQuery(md) {
+        font-size: pxToResponsiveUnit(20px);
+      }
     }
-
-    p:has(span) {
-        margin-block-end: 20px;
-    }
+  }
 }
 
 .description {
-    max-width: 69ch;
-    justify-self: end;
-    font-size: min(functions.getFluidFontSize($maxFontSize: 18), 18px);
-    text-transform: uppercase;
-    line-height: 1.5;
-    display: none;
+  display: none;
 
-    @media screen and (min-width: 601px) {
-        display: block;
-    }
+  @include mediaQuery(lg) {
+    display: block;
+    font-size: pxToResponsiveUnit(20px);
+    letter-spacing: -0.01em;
+    max-inline-size: 583px;
+    grid-row: 1;
+    grid-column: 2/-1;
+    line-height: 28px;
+  }
 }
 
 .nav {
+  display: grid;
+  row-gap: 16px;
+
+  @include mediaQuery(md) {
+    row-gap: 0;
     grid-column: 1/-1;
-    display: grid;
-    grid-template-columns: 1fr;
-    border: none;
-    row-gap: 20px;
+    border: 2px solid $secondary-color;
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-    @media screen and (min-width: 767px) {
-        & {
-            row-gap: 0;
-            border: 2px solid variables.$secondary-color;
-            grid-template-columns: repeat(3, 1fr);
-        }
+  @include mediaQuery(xxl) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  & > p {
+    border-top: none;
+    text-align: center;
+    grid-column: 1/-1;
+    padding: 0.5rem 0;
+    font-size: pxToResponsiveUnit(14px);
+
+    @include mediaQuery(md) {
+      border-block-start: 2px solid $secondary-color;
     }
 
-    @media screen and (min-width: 1200px) {
-        & {
-            grid-template-columns: 1fr 200px 314px 272px;
-        }
+    a {
+      color: $brand-logo-color;
+
+      &:hover {
+        color: $brand-logo-color-dark;
+      }
     }
-
-    &>p {
-        border-top: none;
-        text-align: center;
-        grid-column: 1/-1;
-        padding: .5rem 0;
-        font-size: functions.pxToRem(14px);
-
-        a {
-            color: variables.$brand-logo-color;
-
-            &:hover {
-                color: variables.$brand-logo-color-dark;
-            }
-        }
-
-        @media screen and (min-width: 767px) {
-            & {
-                border-top: 2px solid variables.$secondary-color;
-            }
-        }
-    }
-}
-
-.links,
-.socials {
-    text-transform: uppercase;
+  }
 }
 
 .links,
 .contacts,
 .socials {
-    padding: 1rem 0;
-    border-left: none;
-    border: 2px solid variables.$secondary-color;
+  padding-block: 1rem;
+  border: 2px solid $secondary-color;
 
-    & li>a {
-        justify-content: initial;
-    }
+  a {
+    justify-content: initial;
+  }
 
-    @media screen and (min-width: 767px) {
-        & {
-            border-left: none;
-            border-top: none;
-        }
-    }
+  @include mediaQuery(md) {
+    border-inline-start: none;
+    border-block-start: none;
+    border-block-end: none;
+  }
 
-    @media screen and (min-width: 1200px) {
-        & {
-            border-left: 2px solid variables.$secondary-color;
-        }
-    }
+  & > p {
+    font-size: pxToResponsiveUnit(24px);
+    text-transform: uppercase;
+    border-bottom: 2px solid $secondary-color;
+    padding-left: 0.5rem;
+    padding-bottom: 0.1rem;
+  }
 
-    &>p {
-        font-size: 24px;
-        text-transform: uppercase;
-        border-bottom: 2px solid variables.$secondary-color;
-        padding-left: 0.5rem;
-        padding-bottom: 0.1rem;
-
-        @media screen and (min-width: 767px) and (max-width: 992px) {
-            & {
-                font-size: 20px;
-            }
-        }
-    }
-
-    & li {
-        margin-top: 10px;
-    }
+  & li {
+    margin-top: 10px;
+  }
 }
 
 .links {
-    grid-column: 1/-1;
+  @include mediaQuery(md) {
+    grid-column: 1/2;
+  }
 
-    @media screen and (min-width: 767px) {
-        & {
-            grid-column: 1/2;
-        }
-    }
-
-    @media screen and (min-width: 1200px) {
-        & {
-            grid-column: 2/3;
-        }
-    }
+  @include mediaQuery(xl) {
+    border-left: 2px solid $secondary-color;
+    grid-column: 2/3;
+  }
 }
 
 .contacts {
-    grid-column: 1/-1;
+  @include mediaQuery(md) {
+    grid-column: 2/3;
+  }
 
-    @media screen and (min-width: 767px) {
-        & {
-            grid-column: 2/3;
-            border-left: none;
-        }
-    }
-
-    @media screen and (min-width: 1200px) {
-        & {
-            grid-column: 3/4;
-            border-left: none;
-        }
-    }
+  @include mediaQuery(xl) {
+    grid-column: 3/4;
+  }
 }
 
 .socials {
-    grid-column: 1/-1;
+  @include mediaQuery(md) {
+    grid-column: 3/4;
+    border-inline-end: none;
+  }
 
-    @media screen and (min-width: 767px) {
-        & {
-            grid-column: 3/4;
-            border-left: none;
-        }
-    }
-
-    @media screen and (min-width: 1200px) {
-        & {
-            grid-column: 4/5;
-        }
-    }
+  @include mediaQuery(xl) {
+    grid-column: 4/5;
+  }
 }

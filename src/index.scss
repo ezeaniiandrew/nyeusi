@@ -1,6 +1,4 @@
-@use "./scss/variables";
-@use "./scss/mixins";
-@use "./scss/functions";
+@use "./scss/variables" as *;
 
 * {
   margin: 0;
@@ -8,33 +6,27 @@
   box-sizing: border-box;
 }
 
-.col-5 {
-  border: 2px solid red;
-}
-
 body {
   min-height: 100vh;
   line-height: 1.5;
   font-weight: 400;
-  background-color: variables.$primary-color;
-  font-family: variables.$ff-play-fair;
-  color: variables.$secondary-color;
-  text-transform: uppercase;
+  background-color: $primary-color;
+  font-family: $ff-play-fair;
+  color: $secondary-color;
+  display: grid;
+  place-items: center;
 }
 
 #root {
   position: relative;
   width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
+  max-width: 1440px;
   display: grid;
-  gap: 100px;
+  gap: 126px;
   grid-template-areas:
     "header"
     "main"
     "footer";
-  grid-template-rows: repeat(3, min-content);
-  // overflow-x: hidden;
 }
 
 li {
@@ -47,12 +39,13 @@ a {
 
 img {
   inline-size: 100%;
+  max-block-size: 100%;
   object-fit: contain;
   border-radius: inherit;
 }
 
 h2 {
-  font-family: variables.$ff-bricolage-grotesque;
+  font-family: $ff-bricolage-grotesque;
 }
 
 svg {

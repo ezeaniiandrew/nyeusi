@@ -1,66 +1,58 @@
-@use "../../scss/variables";
-@use "../../scss/functions";
-@use "../../scss/mixins";
+@use "@/scss/variables" as *;
+@use "@/scss/functions" as *;
+@use "@/scss/mixins" as *;
 
 .contact {
+  grid-column: 1/-1;
+  display: grid;
+  gap: 16px;
+
+  @include mediaQuery(md) {
+    grid-column: 1/7;
+    margin-right: 10px;
+  }
+
+  & > div {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid $secondary-color;
+
+    h2 {
+      font-size: calc(pxToResponsiveUnit(33px) + 0.1vw);
+      font-weight: inherit;
+
+      & + p {
+        font-family: $ff-lato;
+      }
+    }
+  }
+
+  & + form {
     grid-column: 1/-1;
-    display: grid;
-    gap: 16px;
 
-    @media screen and (min-width: 762px) {
-        & {
-            grid-column: 1/7;
-            margin-right: 10px;
-        }
+    @include mediaQuery(md) {
+      grid-column: 7/-1;
     }
-
-    &>div {
-        padding: 10px;
-        border-radius: 8px;
-        border: 1px solid variables.$secondary-color;
-
-        h2 {
-            font-size: calc(functions.pxToRem(33px) + 0.1vw);
-            font-weight: inherit;
-
-            &+p {
-                font-family: variables.$ff-lato;
-            }
-        }
-    }
-
-    &+form {
-        grid-column: 1/-1;
-
-        @media screen and (min-width: 762px) {
-            & {
-                grid-column: 7/-1;
-            }
-        }
-    }
+  }
 }
 
 .img {
-    border-radius: 8px;
-    grid-column: 1/-1;
-    grid-row: 2/3;
-    margin-block: 40px;
+  border-radius: 8px;
+  grid-column: 1/-1;
+  grid-row: 2/3;
+  margin-block: 40px;
 
-    @media screen and (min-width: 762px) {
-        & {
-            grid-row: initial;
-        }
+  @include mediaQuery(md) {
+    grid-row: initial;
+  }
+
+  & + p {
+    display: none;
+
+    @include mediaQuery(md) {
+      display: block;
+      grid-column: 1/-1;
+      font-size: calc(pxToResponsiveUnit(45px) + 0.2vw);
     }
-
-    &+p {
-        display: none;
-
-        @media screen and (min-width: 762px) {
-            & {
-                display: block;
-                grid-column: 1/-1;
-                font-size: calc(functions.pxToRem(45px) + 0.2vw);
-            }
-        }
-    }
+  }
 }

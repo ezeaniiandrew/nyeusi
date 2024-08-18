@@ -3,31 +3,30 @@
 @use "../../../../scss/functions";
 
 .address {
-    display: grid;
-    gap: 20px;
+  display: grid;
+  gap: 20px;
 
-    &>li {
-        @include mixins.flex($justify: flex-start);
-        gap: 4px;
-        font-family: variables.$ff-lato;
-        line-height: 1;
-        font-size: calc(functions.pxToRem(15px) + 0.1vw);
+  & > li {
+    @include mixins.flex($justify: flex-start);
+    gap: 4px;
+    font-family: variables.$ff-lato;
+    line-height: 1;
+    font-size: calc(functions.pxToResponsiveUnit(15px) + 0.1vw);
 
-        span {
-            width: 24px;
-            height: 24px;
-            padding: 4px;
-            background-color: variables.$secondary-color;
-            border-radius: 50%;
+    span {
+      width: 24px;
+      height: 24px;
+      padding: 4px;
+      background-color: variables.$secondary-color;
+      border-radius: 50%;
 
-            &>svg {
-                color: variables.$black;
-            }
-
-        }
-
-        &:nth-of-type(2) {
-            text-transform: lowercase;
-        }
+      & > svg {
+        color: variables.$black;
+      }
     }
+
+    &:nth-of-type(2) {
+      text-transform: lowercase;
+    }
+  }
 }

@@ -1,6 +1,6 @@
-@use "../../scss/variables";
-@use "../../scss/functions";
-@use "../../scss/mixins";
+@use "@/scss/variables" as *;
+@use "@/scss/functions" as *;
+@use "@/scss/mixins" as *;
 
 .nav {
   display: flex;
@@ -8,14 +8,20 @@
   justify-content: space-between;
 
   h2 {
-    font-size: functions.pxToRem(32px);
+    font-size: pxToResponsiveUnit(24px);
     text-transform: uppercase;
-    color: variables.$brand-logo-color;
-    @include mixins.flex($align: flex-start);
+    color: $brand-logo-color;
+    @include flex($align: flex-start);
+    line-height: 28px;
+    font-weight: 500;
+    letter-spacing: -0.05em;
+
+    @media screen and (min-width: 992px) {
+      font-size: pxToResponsiveUnit(34px);
+    }
 
     span {
-      color: variables.$secondary-color;
-      font-size: functions.pxToRem(24px);
+      color: $secondary-color;
     }
   }
 
@@ -24,68 +30,46 @@
     gap: 20px;
 
     & a[aria-current="page"] {
-      background-color: variables.$secondary-color;
-      border: 1px solid variables.$secondary-color;
-      color: variables.$black;
+      background-color: $secondary-color;
+      border: 1px solid $secondary-color;
+      color: $black;
     }
 
-    @include mixins.mediaQuery(lg) {
-      & {
-        padding: 150px 0 0 0;
-        padding-inline: 2rem;
-        flex-direction: column;
-        align-items: center;
-        position: fixed;
-        height: 100%;
-        top: 0;
-        right: 0;
-        z-index: 1000;
-        width: 100%;
-        background-color: variables.$brand-logo-color;
-        animation: slide-in 0.7s ease;
+    @include mediaQuery(sm) {
+      padding: 150px 0 0 0;
+      padding-inline: 2rem;
+      flex-direction: column;
+      align-items: center;
+      position: fixed;
+      height: 100%;
+      inset: 0 0 0 0;
+      z-index: 1000;
+      background-color: $brand-logo-color;
+      transition: transform 0.7s ease;
 
-        li {
-          width: min(100%, 50vw);
-        }
+      li {
+        width: 60vw;
       }
     }
   }
 }
 
 .hamburger {
-  display: none;
+  display: block;
+  width: 32px;
+  height: 32px;
+  z-index: 2000;
 
-  @include mixins.mediaQuery(lg) {
-    & {
-      cursor: pointer;
-      position: absolute;
-      top: 1.2rem;
-      right: 1rem;
-      z-index: 2000;
-      display: block;
-      width: 32px;
-      height: 32px;
-
-      svg {
-        width: 100%;
-        height: 100%;
-      }
-
-      &[aria-expanded="false"] + ul {
-        right: -100vw;
-        display: none;
-      }
-    }
+  &[aria-expanded="false"] + ul {
+    transform: translateX(100vw);
   }
-}
 
-@keyframes slide-in {
-  from {
-    right: -100vw;
+  @include mediaQuery(md) {
     display: none;
-  }
-  to {
-    right: 0;
-    display: flex;
+
+    &[aria-expanded="false"] + ul {
+      display: flex;
+      transform: translateX(0);
+    }
   }
 }

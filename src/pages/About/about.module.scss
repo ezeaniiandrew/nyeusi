@@ -1,11 +1,10 @@
-@use "../../scss/variables";
-@use "../../scss/functions";
-@use "../../scss/mixins";
+@use "@/scss/variables";
+@use "@/scss/functions";
+@use "@/scss/mixins";
 
 .heading {
   grid-column: 1/-1;
-  //   font-size: calc(functions.pxToRem(30px));
-  font-size: calc(functions.pxToRem(50px));
+  font-size: calc(functions.pxToResponsiveUnit(50px));
   font-family: variables.$ff-bricolage-grotesque;
   margin-block-end: 20px;
 }

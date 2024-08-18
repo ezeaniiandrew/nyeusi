@@ -1,12 +1,37 @@
-@use "variables";
+@use "variables" as *;
 
-@function pxToRem($px) {
-  @return calc($px / variables.$base-font-size * 1rem);
+@function check-args($args, $types...) {
+  $args-length: length($args);
+  $types-length: length($types);
+
+  @if $args-length != $types-length {
+    $description: if($types-length != 1, "arguments", "argument");
+    @error "Expected #{$types-length} #{$description}, but got #{$args-length}.";
+  }
+
+  @for $i from 1 through length($args) {
+    $arg-type: type-of(nth($args, $i));
+    $expected-type: nth($types, $i);
+
+    @if $arg-type != $expected-type {
+      @error "Argument #{$i} is expected to be #{$expected-type}, but received #{$arg-type}";
+    }
+  }
+
+  @return true;
 }
 
-@function getFluidFontSize($minFontSize: 16, $maxFontSize: 20, $minViewport: 600, $maxViewport: 1540) {
-  $slope: calc(($minFontSize - $maxFontSize) / ($minViewport - $maxViewport));
-  $base: calc(($maxFontSize - $slope * $maxViewport) * 1rem);
+@function pxToResponsiveUnit($px, $unit: rem) {
+  @if check-args(($px, $unit), number, string) {
+    $units: (
+      rem: 1rem,
+      em: 1em,
+    );
 
-  @return calc($base + 100vw * $slope)
+    @if map-has-key($units, $unit) == false {
+      @error "Invalid target unit: #{$unit}. Please use one of: #{map-keys($units)}";
+    }
+
+    @return calc($px / $base-font-size * map-get($units, $unit));
+  }
 }

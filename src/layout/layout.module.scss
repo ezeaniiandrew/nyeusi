@@ -1,54 +1,47 @@
-@use "../scss/mixins";
-@use "../scss/variables";
+@use "../scss/mixins" as *;
+@use "../scss/variables" as *;
 
 .header {
   grid-area: header;
   position: fixed;
   top: 0;
   width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  background-color: variables.$primary-color;
-  padding: 1rem;
-  padding-inline: 3rem;
+  max-width: 1440px;
+  background-color: $primary-color;
+  padding-inline: clamp(18px, 5vw, 72px);
+  padding-block: 27px;
+  height: 66px;
   z-index: 100000;
 
-  @media screen and (max-width: 992px) {
-    padding: 1rem;
+  @include mediaQuery(md) {
+    padding-block-start: 35px;
+    padding-block-end: 60px;
+    height: 81px;
   }
 }
 
 .main {
-  margin-block-start: 40px;
   grid-area: main;
-  padding: 1rem;
-  padding-inline: 3rem;
   display: grid;
-  // gap: 40px;
+  padding-inline: clamp(18px, 5vw, 72px);
   grid-template-columns: repeat(12, 1fr);
+  margin-block-start: 10px;
 
-  @media screen and (max-width: 992px) {
-    padding: 1rem;
-    // grid-template-columns: repeat(2, 1fr);
+  @include mediaQuery(lg) {
+    margin-block: 52px;
   }
 }
 
 .footer {
-  padding: 1rem;
-  padding-inline: 3rem;
+  padding-inline: clamp(18px, 5vw, 72px);
   grid-area: footer;
   display: grid;
-  row-gap: 80px;
-  column-gap: 40px;
-  grid-template-columns: 1fr 1fr;
-  line-height: 1.2;
+  row-gap: 96px;
 
-  @include mixins.mediaQuery(sm) {
+  @include mediaQuery(xl) {
     & {
-      grid-template-columns: 1fr;
-      column-gap: 0;
-      row-gap: 50px;
-      padding: 1rem;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 100px;
     }
   }
 }

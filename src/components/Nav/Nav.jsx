@@ -2,7 +2,7 @@ import { useState } from "react";
 import Link from "../Link/Link";
 import styles from "./nav.module.scss";
 import { MdClose, MdMenu } from "react-icons/md";
-import { routes } from "@/constants/index";
+import { navLinks } from "@/constants";
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,15 +20,15 @@ function Nav() {
         {!isOpen ? <MdMenu /> : <MdClose />}
       </span>
       <ul>
-        {routes.map((route) => (
-          <li key={route.name}>
+        {navLinks.map((link) => (
+          <li key={link.name}>
             <Link
-              to={route.path}
+              to={link.path}
               variant="outlined"
-              Icon={route.icon}
+              Icon={link.icon}
               onClick={() => setIsOpen(!isOpen)}
             >
-              {route.name}
+              {link.name}
             </Link>
           </li>
         ))}
