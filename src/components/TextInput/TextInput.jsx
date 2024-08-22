@@ -7,11 +7,16 @@ import {
   FieldError,
 } from "react-aria-components";
 import styles from "./text-input.module.scss";
+import { FaAsterisk } from "react-icons/fa";
 
-function TextInput({ label, type }) {
+function TextInput({ label, type, isRequired }) {
+  console.log(isRequired);
   return (
-    <TextField type={type} isRequired>
-      <Label className={styles.text_label}>{label}</Label>
+    <TextField type={type} isRequired={isRequired}>
+      <Label className={styles.label}>
+        {label}
+        {isRequired ? <FaAsterisk /> : ""}
+      </Label>
       {!type ? (
         <TextArea placeholder={`Type your ${label}`} />
       ) : (

@@ -3,13 +3,13 @@
 @use "@/scss/mixins" as *;
 
 .contact {
-  grid-column: 1/-1;
-  display: grid;
-  gap: 16px;
-
   @include mediaQuery(md) {
     grid-column: 1/7;
-    margin-right: 10px;
+    margin-inline-end: 10px;
+  }
+
+  @include mediaQuery(lg) {
+    margin-inline-end: 30px;
   }
 
   & > div {
@@ -17,12 +17,31 @@
     border-radius: 8px;
     border: 1px solid $secondary-color;
 
+    &:first-of-type {
+      margin-block-end: 10px;
+
+      @include mediaQuery(lg) {
+        margin-block-end: 30px;
+      }
+    }
+
     h2 {
-      font-size: calc(pxToResponsiveUnit(33px) + 0.1vw);
+      font-size: clamp(
+        pxToResponsiveUnit(24px),
+        4vw + 0.75rem,
+        pxToResponsiveUnit(64px)
+      );
+      line-height: 32px;
       font-weight: inherit;
+      letter-spacing: -0.01em;
 
       & + p {
         font-family: $ff-lato;
+
+        @include mediaQuery(md) {
+          font-size: pxToResponsiveUnit(20px);
+          margin-block-start: 20px;
+        }
       }
     }
   }
@@ -38,12 +57,18 @@
 
 .img {
   border-radius: 8px;
-  grid-column: 1/-1;
   grid-row: 2/3;
   margin-block: 40px;
 
+  @include backgroundImage(
+    "../../assets/contact-page-image-mobile.jpg",
+    218px,
+    "../../assets/contact-page-image-desktop.jpg",
+    546px
+  );
+
   @include mediaQuery(md) {
-    grid-row: initial;
+    grid-column: 1/-1;
   }
 
   & + p {
@@ -51,8 +76,13 @@
 
     @include mediaQuery(md) {
       display: block;
+      letter-spacing: -0.05em;
       grid-column: 1/-1;
-      font-size: calc(pxToResponsiveUnit(45px) + 0.2vw);
+      font-size: clamp(
+        pxToResponsiveUnit(36px),
+        3vw + 1rem,
+        pxToResponsiveUnit(48px)
+      );
     }
   }
 }

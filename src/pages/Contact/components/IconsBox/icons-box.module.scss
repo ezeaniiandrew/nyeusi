@@ -1,54 +1,41 @@
-@use "../../../../scss/variables";
-@use "../../../../scss/mixins";
-@use "../../../../scss/functions";
+@use "@/scss/variables" as *;
+@use "@/scss/mixins" as *;
 
 .icons_box {
-    margin-block-start: 30px;
-    @include mixins.flex($justify: space-between);
+  margin-block-start: 30px;
+  @include flex($justify: space-between);
+  width: min(100%, 323px);
 
-    width: 70%;
-    margin: 0 auto;
-    margin-top: 30px;
+  & > span {
+    @include flex();
+    width: 44px;
+    height: 44px;
+    background-color: $secondary-color;
+    border-radius: 50%;
 
-    @media screen and (min-width: 992px) {
-        & {
-            width: 50%;
-            margin: 0 auto;
-            margin-top: 30px;
-        }
+    & > svg {
+      width: 24px;
+      height: 24px;
     }
 
-    &>span {
-        width: 34px;
-        height: 34px;
-        padding: 8px;
-        background-color: variables.$secondary-color;
-        border-radius: 50%;
-
-        &:nth-of-type(1)>svg {
-            fill: variables.$black;
-        }
-
-        &:nth-of-type(2)>svg {
-            fill: variables.$facebook-color;
-        }
-
-        &:nth-of-type(3)>svg {
-            fill: #0077b5;
-        }
-
-        &:nth-of-type(3)>svg {
-            fill: #0077b5;
-        }
-
-        &:nth-of-type(4)>svg {
-            fill: #e62117;
-        }
-
-        &:nth-of-type(5)>svg {
-            fill: #d62976;
-        }
-
+    &:nth-of-type(1) > svg {
+      fill: $black;
     }
 
+    &:nth-of-type(2) > svg {
+      fill: $facebook-color;
+    }
+
+    &:nth-of-type(3) > svg {
+      fill: $linkedin-color;
+    }
+
+    &:nth-of-type(4) > svg {
+      fill: $youtube-color;
+    }
+
+    &:nth-of-type(5) > svg {
+      background: $instagram-color;
+    }
+  }
 }

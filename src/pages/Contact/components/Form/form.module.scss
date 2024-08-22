@@ -1,18 +1,18 @@
-@use "../../../../scss/variables";
+@use "@/scss/variables" as *;
+@use "@/scss/mixins" as *;
 
 .form {
-    padding: 10px;
-    border-radius: 8px;
-    border: 2px solid variables.$form-border-color;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid $form-border-color;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
-    @media screen and (min-width: 992px) {
-        & {
-            grid-column: 2/-1;
-            grid-row: 1/1;
-        }
+  @include mediaQuery(md) {
+    & {
+      grid-column: 2/-1;
+      grid-row: 1/1;
     }
-
-    &>button {
-        margin-block-start: 1rem;
-    }
+  }
 }

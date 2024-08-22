@@ -24,10 +24,10 @@
   grid-area: main;
   display: grid;
   padding-inline: clamp(18px, 5vw, 72px);
-  grid-template-columns: repeat(12, 1fr);
   margin-block-start: 10px;
 
-  @include mediaQuery(lg) {
+  @include mediaQuery(md) {
+    grid-template-columns: repeat(12, 1fr);
     margin-block: 52px;
   }
 }

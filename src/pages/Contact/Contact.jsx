@@ -2,8 +2,6 @@ import styles from "./contact.module.scss";
 import Form from "./components/Form/Form";
 import IconsBox from "./components/IconsBox/IconsBox";
 import ContactAddress from "./components/ContactAddress/ContactAddress";
-// import contactImage from "../../assets/contact-page-image-mobile.jpg";
-import imageUrl from "../../assets/contact-page-image-desktop.jpg";
 
 function Contact() {
   return (
@@ -24,9 +22,7 @@ function Contact() {
         </div>
       </article>
       <Form />
-      <div className={styles.img}>
-        <img src={imageUrl} alt="" />
-      </div>
+      <div className={styles.img}></div>
       <p>
         Feel free to connect with Nyeusi Interior Design House for inquiries,
         collaborations, or to share your vision for your dark luxurious

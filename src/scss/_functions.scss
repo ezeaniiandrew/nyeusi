@@ -1,4 +1,4 @@
-@use "variables" as *;
+@use "./variables" as *;
 
 @function check-args($args, $types...) {
   $args-length: length($args);
@@ -32,6 +32,6 @@
       @error "Invalid target unit: #{$unit}. Please use one of: #{map-keys($units)}";
     }
 
-    @return calc($px / $base-font-size * map-get($units, $unit));
+    @return calc($px / 16px * map-get($units, $unit));
   }
 }

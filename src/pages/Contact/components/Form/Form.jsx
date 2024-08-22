@@ -6,10 +6,10 @@ import styles from "./form.module.scss";
 function Form() {
   return (
     <AriaForm className={styles.form}>
-      <TextInput type="text" label="name" />
-      <TextInput type="email" label="email" />
-      <TextInput label="message" />
-      <Button>Send your message</Button>
+      <TextInput type="text" label="Name" isRequired />
+      <TextInput type="email" label="Email" isRequired />
+      <TextInput label="message" isRequired />
+      <Button>Submit</Button>
     </AriaForm>
   );
 }

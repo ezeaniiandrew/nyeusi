@@ -1,44 +1,51 @@
 @use "@/scss/variables" as *;
 @use "@/scss/functions" as *;
+@use "@/scss/mixins" as *;
 
-.text_label {
+div:has(textarea) {
+  flex: 1;
+  height: 100%;
+
+  label:has(+ textarea:not(:focus)) {
+    display: none;
+  }
+
+  textarea {
+    min-height: pxToResponsiveUnit(140px);
+    height: 90%;
+  }
+}
+
+.label {
   display: block;
-  margin-block: 7px;
-  color: $white;
-  font-size: calc(pxToResponsiveUnit(17px) + 0.1vw);
+  margin-block-end: 5px;
   font-family: $ff-lato;
+  text-transform: capitalize;
 
-  &:has(+ textarea:not(:focus):not(:active)) {
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    white-space: nowrap;
-    width: 1px;
+  & > svg {
+    width: 10px;
+    height: 10px;
+    margin-inline-start: 4px;
+    color: $form-border-color;
   }
 
   & + input,
   & + textarea {
+    border-radius: 8px;
     width: 100%;
     background-color: transparent;
-    border: none;
     padding: 10px 0 4px;
     color: $form-border-color;
+    border: 2px solid $form-border-color;
+    padding-inline-start: 4px;
 
     &::placeholder {
       color: $form-border-color;
       font-family: $ff-lato;
     }
-  }
 
-  & + input {
-    border-block-end: 2px solid $form-border-color;
-  }
-
-  & + textarea {
-    border-radius: 8px;
-    padding-inline-start: 4px;
-    min-height: pxToResponsiveUnit(170px);
-    border: 2px solid $form-border-color;
+    & + span {
+      color: $youtube-color;
+    }
   }
 }

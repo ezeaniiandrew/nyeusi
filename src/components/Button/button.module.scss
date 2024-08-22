@@ -10,7 +10,7 @@
   background-color: $border-color;
   color: $primary-color;
   font-family: $ff-lato;
-  font-size: calc(pxToResponsiveUnit(15px) + 0.1vw);
+  font-size: pxToResponsiveUnit(16px);
   font-weight: 600;
 
   @include mediaQuery(lg) {

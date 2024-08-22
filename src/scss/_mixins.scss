@@ -1,4 +1,4 @@
-@use "functions" as *;
+@use "./functions" as *;
 
 @mixin flex($align: center, $justify: center) {
   @if check-args(($align, $justify), string, string) {

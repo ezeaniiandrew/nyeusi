@@ -1,32 +1,35 @@
-@use "../../../../scss/variables";
-@use "../../../../scss/mixins";
-@use "../../../../scss/functions";
+@use "../../../../scss/variables" as *;
+@use "../../../../scss/mixins" as *;
+@use "../../../../scss/functions" as *;
 
 .address {
   display: grid;
   gap: 20px;
 
   & > li {
-    @include mixins.flex($justify: flex-start);
-    gap: 4px;
-    font-family: variables.$ff-lato;
-    line-height: 1;
-    font-size: calc(functions.pxToResponsiveUnit(15px) + 0.1vw);
+    @include flex($justify: flex-start);
+    gap: 8px;
+    font-family: $ff-lato;
+    line-height: inherit;
+    font-size: pxToResponsiveUnit(16px);
+
+    @include mediaQuery(md) {
+      font-size: pxToResponsiveUnit(18px);
+    }
 
     span {
       width: 24px;
       height: 24px;
+      @include flex();
+      border: 1px solid $secondary-color;
       padding: 4px;
-      background-color: variables.$secondary-color;
       border-radius: 50%;
 
       & > svg {
-        color: variables.$black;
+        width: 18px;
+        height: 18px;
+        color: $secondary-color;
       }
-    }
-
-    &:nth-of-type(2) {
-      text-transform: lowercase;
     }
   }
 }

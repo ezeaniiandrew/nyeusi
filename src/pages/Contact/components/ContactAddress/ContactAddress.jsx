@@ -21,7 +21,7 @@ function ContactAddress() {
         <span>
           <CiLocationOn />
         </span>
-        tom mboya street, nairobi, kenya.
+        Tom mboya street, Nairobi, Kenya.
       </li>
     </ul>
   );
