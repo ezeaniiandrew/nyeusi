@@ -2,26 +2,37 @@
 @use "@/scss/functions";
 @use "@/scss/mixins";
 
-.heading {
+%span-full {
   grid-column: 1/-1;
-  font-size: calc(functions.pxToResponsiveUnit(50px));
-  font-family: variables.$ff-bricolage-grotesque;
-  margin-block-end: 20px;
 }
 
-.subText {
+.wrapper {
+  @extend %span-full;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.heading {
+  @extend %span-full;
+  font-size: calc(functions.pxToResponsiveUnit(50px));
+  font-family: variables.$ff-bricolage-grotesque;
+}
+
+%text {
   font-family: variables.$ff-lato;
   margin-block: 50px;
   font-size: 18px;
+}
 
+.subText {
   &--1 {
-    @extend .subText;
+    @extend %text;
     grid-column: 1/7;
     margin-inline-end: 3.5rem;
   }
 
   &--2 {
-    @extend .subText;
+    @extend %text;
     grid-column: 7/-1;
     margin-inline-start: 3.5rem;
   }
@@ -35,5 +46,49 @@
 .img {
   grid-column: 1/-1;
   border-radius: 8px;
-  margin-block-end: 20px;
+  margin-block: 20px;
+}
+
+.services {
+  @extend %span-full;
+  height: 160vh;
+}
+
+.mt-50 {
+  margin-block-start: 50px;
+}
+
+.cards {
+  display: flex;
+  overflow-x: auto;
+  gap: 40px;
+}
+
+.card {
+  border: 1.5px solid variables.$secondary-color;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  margin-block-start: 40px;
+  border-radius: 16px;
+  flex: 0 0 100%;
+}
+
+.textbox {
+  max-width: 433px;
+  margin-inline: auto;
+  font-family: variables.$ff-bricolage-grotesque;
+  display: grid;
+  gap: 16px;
+
+  h3 {
+    font-size: functions.pxToResponsiveUnit(28px);
+    font-weight: 500;
+  }
+
+  p {
+    font-size: functions.pxToResponsiveUnit(20px);
+    font-family: variables.$ff-lato;
+    line-height: 28px;
+  }
 }
