@@ -29,6 +29,55 @@ import ourProcessCardThreeImageSmall from "@/assets/our-process-card-three-small
 import ourProcessCardFourImageBig from "@/assets/our-process-card-four-big.webp";
 import ourProcessCardFourImageSmall from "@/assets/our-process-card-four-small.webp";
 
+import contemporaryOneBig from "@/assets/project-contemporary-one-big.webp";
+import contemporaryOneSmall from "@/assets/project-contemporary-one-small.webp";
+import contemporaryTwoBig from "@/assets/project-contemporary-two-big.webp";
+import contemporaryTwoSmall from "@/assets/project-contemporary-two-small.webp";
+import contemporaryThreeBig from "@/assets/project-contemporary-three-big.webp";
+import contemporaryThreeSmall from "@/assets/project-contemporary-three-small.webp";
+import contemporaryFourBig from "@/assets/project-contemporary-four-big.webp";
+import contemporaryFourSmall from "@/assets/project-contemporary-four-small.webp";
+import contemporaryFiveBig from "@/assets/project-contemporary-five-big.webp";
+import contemporaryFiveSmall from "@/assets/project-contemporary-five-small.webp";
+import contemporarySixBig from "@/assets/project-contemporary-six-big.webp";
+import contemporarySixSmall from "@/assets/project-contemporary-six-small.webp";
+import snohettaOneBig from "@/assets/project-snohetta-one-big.webp";
+import snohettaOneSmall from "@/assets/project-snohetta-one-small.webp";
+import snohettaTwoBig from "@/assets/project-snohetta-two-big.webp";
+import snohettaTwoSmall from "@/assets/project-snohetta-two-small.webp";
+import snohettaThreeBig from "@/assets/project-snohetta-three-big.webp";
+import snohettaThreeSmall from "@/assets/project-snohetta-three-small.webp";
+import snohettaFourBig from "@/assets/project-snohetta-four-big.webp";
+import snohettaFourSmall from "@/assets/project-snohetta-four-small.webp";
+import snohettaFiveBig from "@/assets/project-snohetta-five-big.webp";
+import snohettaFiveSmall from "@/assets/project-snohetta-five-small.webp";
+import snohettaSixBig from "@/assets/project-snohetta-six-big.webp";
+import snohettaSixSmall from "@/assets/project-snohetta-six-small.webp";
+import gordonOneBig from "@/assets/project-gordon-one-big.webp";
+import gordonOneSmall from "@/assets/project-gordon-one-small.webp";
+import gordonTwoBig from "@/assets/project-gordon-two-big.webp";
+import gordonTwoSmall from "@/assets/project-gordon-two-small.webp";
+import gordonThreeBig from "@/assets/project-gordon-three-big.webp";
+import gordonThreeSmall from "@/assets/project-gordon-three-small.webp";
+import gordonFourBig from "@/assets/project-gordon-four-big.webp";
+import gordonFourSmall from "@/assets/project-gordon-four-small.webp";
+import gordonFiveBig from "@/assets/project-gordon-five-big.webp";
+import gordonFiveSmall from "@/assets/project-gordon-five-small.webp";
+import gordonSixBig from "@/assets/project-gordon-six-big.webp";
+import gordonSixSmall from "@/assets/project-gordon-six-small.webp";
+import adorableOneBig from "@/assets/project-adorable-one-big.webp";
+import adorableOneSmall from "@/assets/project-adorable-one-small.webp";
+import adorableTwoBig from "@/assets/project-adorable-two-big.webp";
+import adorableTwoSmall from "@/assets/project-adorable-two-small.webp";
+import adorableThreeBig from "@/assets/project-adorable-three-big.webp";
+import adorableThreeSmall from "@/assets/project-adorable-three-small.webp";
+import adorableFourBig from "@/assets/project-adorable-four-big.webp";
+import adorableFourSmall from "@/assets/project-adorable-four-small.webp";
+import adorableFiveBig from "@/assets/project-adorable-five-big.webp";
+import adorableFiveSmall from "@/assets/project-adorable-five-small.webp";
+import adorableSixBig from "@/assets/project-adorable-six-big.webp";
+import adorableSixSmall from "@/assets/project-adorable-six-small.webp";
+
 export const navLinks = [
   { path: "/", name: "home" },
   { path: "/projects", name: "projects" },
@@ -153,5 +202,48 @@ export const aboutUsCardsData = {
         desktop: ourProcessCardFourImageBig,
       },
     },
+  ],
+};
+
+export const pastProjects = {
+  contemporary: [
+    { desktop: contemporaryOneBig, mobile: contemporaryOneSmall },
+    { title: "CONTEMPORARY INTERIOR", year: 2023 },
+    { desktop: contemporaryTwoBig, mobile: contemporaryTwoSmall },
+    { desktop: contemporaryThreeBig, mobile: contemporaryThreeSmall },
+    { desktop: contemporaryFourBig, mobile: contemporaryFourSmall },
+    { desktop: contemporaryFiveBig, mobile: contemporaryFiveSmall },
+    { desktop: contemporarySixBig, mobile: contemporarySixSmall },
+    "view more",
+  ],
+  snohetta: [
+    { desktop: snohettaOneBig, mobile: snohettaOneSmall },
+    { title: "SNOHETTA", year: 2023 },
+    { desktop: snohettaTwoBig, mobile: snohettaTwoSmall },
+    { desktop: snohettaThreeBig, mobile: snohettaThreeSmall },
+    { desktop: snohettaFourBig, mobile: snohettaFourSmall },
+    { desktop: snohettaFiveBig, mobile: snohettaFiveSmall },
+    { desktop: snohettaSixBig, mobile: snohettaSixSmall },
+    "view more",
+  ],
+  gordon: [
+    { desktop: gordonOneBig, mobile: gordonOneSmall },
+    { title: "THE GORDON", year: 2023 },
+    { desktop: gordonTwoBig, mobile: gordonTwoSmall },
+    { desktop: gordonThreeBig, mobile: gordonThreeSmall },
+    { desktop: gordonFourBig, mobile: gordonFourSmall },
+    { desktop: gordonFiveBig, mobile: gordonFiveSmall },
+    { desktop: gordonSixBig, mobile: gordonSixSmall },
+    "view more",
+  ],
+  adorable: [
+    { desktop: adorableOneBig, mobile: adorableOneSmall },
+    { title: "ADORABLE HOMES", year: 2023 },
+    { desktop: adorableTwoBig, mobile: adorableTwoSmall },
+    { desktop: adorableThreeBig, mobile: adorableThreeSmall },
+    { desktop: adorableFourBig, mobile: adorableFourSmall },
+    { desktop: adorableFiveBig, mobile: adorableFiveSmall },
+    { desktop: adorableSixBig, mobile: adorableSixSmall },
+    "view more",
   ],
 };
