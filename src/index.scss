@@ -1,5 +1,6 @@
 @use "./scss/variables" as *;
 @use "./scss/functions" as *;
+@use "./scss/mixins";
 
 * {
   margin: 0;
@@ -24,11 +25,15 @@ body {
   width: 100%;
   max-width: 1440px;
   display: grid;
-  gap: 126px;
+  gap: 90px;
   grid-template-areas:
     "header"
     "main"
     "footer";
+
+  @include mixins.mediaQuery(md) {
+    gap: 120px;
+  }
 }
 
 li {
