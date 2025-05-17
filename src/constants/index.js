@@ -214,7 +214,7 @@ export const pastProjects = {
     { desktop: contemporaryFourBig, mobile: contemporaryFourSmall },
     { desktop: contemporaryFiveBig, mobile: contemporaryFiveSmall },
     { desktop: contemporarySixBig, mobile: contemporarySixSmall },
-    "view more",
+    { text: "view more", link: "/projects/contemporary" },
   ],
   snohetta: [
     { desktop: snohettaOneBig, mobile: snohettaOneSmall },
@@ -224,7 +224,7 @@ export const pastProjects = {
     { desktop: snohettaFourBig, mobile: snohettaFourSmall },
     { desktop: snohettaFiveBig, mobile: snohettaFiveSmall },
     { desktop: snohettaSixBig, mobile: snohettaSixSmall },
-    "view more",
+    { text: "view more", link: "/projects/snohetta" },
   ],
   gordon: [
     { desktop: gordonOneBig, mobile: gordonOneSmall },
@@ -234,7 +234,7 @@ export const pastProjects = {
     { desktop: gordonFourBig, mobile: gordonFourSmall },
     { desktop: gordonFiveBig, mobile: gordonFiveSmall },
     { desktop: gordonSixBig, mobile: gordonSixSmall },
-    "view more",
+    { text: "view more", link: "/projects/gordon" },
   ],
   adorable: [
     { desktop: adorableOneBig, mobile: adorableOneSmall },
@@ -244,6 +244,6 @@ export const pastProjects = {
     { desktop: adorableFourBig, mobile: adorableFourSmall },
     { desktop: adorableFiveBig, mobile: adorableFiveSmall },
     { desktop: adorableSixBig, mobile: adorableSixSmall },
-    "view more",
+    { text: "view more", link: "/projects/adorable" },
   ],
 };
