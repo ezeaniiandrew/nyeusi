@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "@/layout";
-import { About, Contact, Home, Projects } from "@/pages";
+import { About, Contact, Home, Projects, ProjectDetail } from "@/pages";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "projects",
         element: <Projects />,
+      },
+      {
+        path: "projects/:projectId",
+        element: <ProjectDetail />,
       },
     ],
   },

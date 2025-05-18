@@ -1,0 +1,124 @@
+@use "@/scss/variables";
+@use "@/scss/functions";
+@use "@/scss/mixins";
+
+%span-full {
+  grid-column: 1/-1;
+}
+
+.wrapper {
+  @extend %span-full;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: repeat(3, auto);
+  column-gap: 43px;
+  row-gap: 20px;
+}
+
+.heading {
+  @extend %span-full;
+  font-size: calc(functions.pxToResponsiveUnit(50px));
+  font-family: variables.$ff-bricolage-grotesque;
+  text-transform: capitalize;
+  line-height: 1;
+  padding-block-end: 5px;
+  border-bottom: 1px solid variables.$secondary-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    align-self: flex-end;
+    font-size: 20px;
+  }
+}
+
+.banner {
+  $height: 484px;
+  grid-column: 1/2;
+  height: $height;
+  max-height: 484px;
+  grid-row: 2/3;
+  position: relative;
+
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.arrows {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  width: 95%;
+  margin-inline: auto;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+
+  & span {
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    color: variables.$brand-logo-color-dark;
+    transition: all 0.3s ease-in-out;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 2px solid variables.$black;
+    padding: 5px;
+    background-color: variables.$black;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.thumbnails {
+  border: 2px solid variables.$secondary-color;
+  padding: 18px;
+  grid-column: 2/-1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: 768px;
+  overflow-y: auto;
+  border-radius: 8px;
+  grid-row: 2/-1;
+
+  div {
+    flex-shrink: 0;
+    overflow: hidden;
+    height: 240px;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  img:hover {
+    transform: scale(1.05);
+  }
+}
+
+.active {
+  border: 1px solid variables.$brand-logo-color;
+}
+
+.textbox {
+  grid-column: 1/2;
+  grid-row: 3/-1;
+  display: grid;
+  gap: 10px;
+  font-family: variables.$ff-lato;
+  font-size: functions.pxToResponsiveUnit(20px);
+}

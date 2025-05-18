@@ -247,3 +247,174 @@ export const pastProjects = {
     { text: "view more", link: "/projects/adorable" },
   ],
 };
+
+export const projects = {
+  contemporary: {
+    title: "Contemporary Interior",
+    year: 2023,
+    images: [
+      {
+        id: "contemporary-one",
+        src: contemporaryOneBig,
+        alt: "Contemporary project image one",
+        thumbnail: contemporaryOneSmall,
+      },
+      {
+        id: "contemporary-two",
+        src: contemporaryTwoBig,
+        alt: "Contemporary project image two",
+        thumbnail: contemporaryTwoSmall,
+      },
+      {
+        id: "contemporary-three",
+        src: contemporaryThreeBig,
+        alt: "Contemporary project image three",
+        thumbnail: contemporaryThreeSmall,
+      },
+      {
+        id: "contemporary-four",
+        src: contemporaryFourBig,
+        alt: "Contemporary project image four",
+        thumbnail: contemporaryFourSmall,
+      },
+      {
+        id: "contemporary-five",
+        src: contemporaryFiveBig,
+        alt: "Contemporary project image five",
+        thumbnail: contemporaryFiveSmall,
+      },
+      {
+        id: "contemporary-six",
+        src: contemporarySixBig,
+        alt: "Contemporary project image six",
+        thumbnail: contemporarySixSmall,
+      },
+    ],
+  },
+  snohetta: {
+    title: "Snohetta",
+    year: 2023,
+    images: [
+      {
+        id: "snohetta-one",
+        src: snohettaOneBig,
+        alt: "Snohetta project image one",
+        thumbnail: snohettaOneSmall,
+      },
+      {
+        id: "snohetta-two",
+        src: snohettaTwoBig,
+        alt: "Snohetta project image two",
+        thumbnail: snohettaTwoSmall,
+      },
+      {
+        id: "snohetta-three",
+        src: snohettaThreeBig,
+        alt: "Snohetta project image three",
+        thumbnail: snohettaThreeSmall,
+      },
+      {
+        id: "snohetta-four",
+        src: snohettaFourBig,
+        alt: "Snohetta project image four",
+        thumbnail: snohettaFourSmall,
+      },
+      {
+        id: "snohetta-five",
+        src: snohettaFiveBig,
+        alt: "Snohetta project image five",
+        thumbnail: snohettaFiveSmall,
+      },
+      {
+        id: "snohetta-six",
+        src: snohettaSixBig,
+        alt: "Snohetta project image six",
+        thumbnail: snohettaSixSmall,
+      },
+    ],
+  },
+  gordon: {
+    title: "The Gordon",
+    year: 2023,
+    images: [
+      {
+        id: "gordon-one",
+        src: gordonOneBig,
+        alt: "Gordon project image one",
+        thumbnail: gordonOneSmall,
+      },
+      {
+        id: "gordon-two",
+        src: gordonTwoBig,
+        alt: "Gordon project image two",
+        thumbnail: gordonTwoSmall,
+      },
+      {
+        id: "gordon-three",
+        src: gordonThreeBig,
+        alt: "Gordon project image three",
+        thumbnail: gordonThreeSmall,
+      },
+      {
+        id: "gordon-four",
+        src: gordonFourBig,
+        alt: "Gordon project image four",
+        thumbnail: gordonFourSmall,
+      },
+      {
+        id: "gordon-five",
+        src: gordonFiveBig,
+        alt: "Gordon project image five",
+        thumbnail: gordonFiveSmall,
+      },
+      {
+        id: "gordon-six",
+        src: gordonSixBig,
+        alt: "Gordon project image six",
+        thumbnail: gordonSixSmall,
+      },
+    ],
+  },
+  adorable: {
+    title: "Adorable Homes",
+    year: 2023,
+    images: [
+      {
+        id: "adorable-one",
+        src: adorableOneBig,
+        alt: "Adorable project image one",
+        thumbnail: adorableOneSmall,
+      },
+      {
+        id: "adorable-two",
+        src: adorableTwoBig,
+        alt: "Adorable project image two",
+        thumbnail: adorableTwoSmall,
+      },
+      {
+        id: "adorable-three",
+        src: adorableThreeBig,
+        alt: "Adorable project image three",
+        thumbnail: adorableThreeSmall,
+      },
+      {
+        id: "adorable-four",
+        src: adorableFourBig,
+        alt: "Adorable project image four",
+        thumbnail: adorableFourSmall,
+      },
+      {
+        id: "adorable-five",
+        src: adorableFiveBig,
+        alt: "Adorable project image five",
+        thumbnail: adorableFiveSmall,
+      },
+      {
+        id: "adorable-six",
+        src: adorableSixBig,
+        alt: "Adorable project image six",
+        thumbnail: adorableSixSmall,
+      },
+    ],
+  },
+};

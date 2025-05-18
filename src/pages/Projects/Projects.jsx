@@ -28,12 +28,12 @@ function Projects() {
                 {index + 1 === 8 ? (
                   <Link
                     key={index}
-                    to="/"
+                    to={project.link}
                     variant="solid"
                     Icon={MdArrowOutward}
                     className={`${styles["grid-gallery-item--8"]}`}
                   >
-                    View more
+                    {project.text}
                   </Link>
                 ) : (
                   <div
@@ -66,12 +66,12 @@ function Projects() {
                 {index + 1 === 8 ? (
                   <Link
                     key={index}
-                    to="/"
+                    to={project.link}
                     variant="solid"
                     Icon={MdArrowOutward}
                     className={`${styles["grid-gallery-item--8"]}`}
                   >
-                    View more
+                    {project.text}
                   </Link>
                 ) : (
                   <div
@@ -104,12 +104,12 @@ function Projects() {
                 {index + 1 === 8 ? (
                   <Link
                     key={index}
-                    to="/"
+                    to={project.link}
                     variant="solid"
                     Icon={MdArrowOutward}
                     className={`${styles["grid-gallery-item--8"]}`}
                   >
-                    View more
+                    {project.text}
                   </Link>
                 ) : (
                   <div
@@ -142,12 +142,12 @@ function Projects() {
                 {index + 1 === 8 ? (
                   <Link
                     key={index}
-                    to="/"
+                    to={project.link}
                     variant="solid"
                     Icon={MdArrowOutward}
                     className={`${styles["grid-gallery-item--8"]}`}
                   >
-                    View more
+                    {project.text}
                   </Link>
                 ) : (
                   <div
