@@ -3,7 +3,7 @@ import styles from "./home.module.scss";
 import { pastProjectsData } from "@/constants/index";
 import mobileHeroImage from "@/assets/hero-image-small.jpg";
 import desktopHeroImage from "@/assets/hero-image-big.jpg";
-import { Link, ProjectCard } from "@/components";
+import { Link, ProjectCard, ProjectList } from "@/components";
 
 function Home() {
   return (
@@ -70,16 +70,7 @@ function Home() {
             our world, and let the allure of dark luxury enrich your spaces.
           </p>
         </div>
-        <div className={styles.projects_display}>
-          {pastProjectsData.map((project) => (
-            <ProjectCard key={project.text} images={project.images}>
-              <p>{project.text}</p>
-              <Link to={project.to} variant="solid" Icon={MdArrowOutward}>
-                View
-              </Link>
-            </ProjectCard>
-          ))}
-        </div>
+        <ProjectList />
       </section>
     </>
   );

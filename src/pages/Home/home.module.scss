@@ -178,16 +178,4 @@
       }
     }
   }
-
-  &_display {
-    display: grid;
-    gap: 24px;
-
-    @include mediaQuery(md) {
-      & {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 28px;
-      }
-    }
-  }
 }
