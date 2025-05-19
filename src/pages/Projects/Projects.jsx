@@ -1,11 +1,5 @@
 import styles from "./project.module.scss";
-import imageOne from "@/assets/project-adorable-one-big.webp";
-import imageTwo from "@/assets/project-adorable-two-big.webp";
-import imageThree from "@/assets/project-adorable-three-big.webp";
-import imageFour from "@/assets/project-adorable-four-big.webp";
-import imageFive from "@/assets/project-adorable-five-big.webp";
-import imageSix from "@/assets/project-adorable-six-big.webp";
-import { Link } from "@/components";
+import { Link, ProjectList } from "@/components";
 import { MdArrowOutward } from "react-icons/md";
 import { pastProjects } from "@/constants";
 
@@ -13,12 +7,15 @@ function Projects() {
   return (
     <section className={styles.wrapper}>
       <h1 className={styles.heading}>
-        Whether you are a connoisseur of dark luxurious interiors, an aspiring
-        interior designer, or someone who appreciates the art of opulence, we
-        invite you to embark on this journey with Nyeusi Interior Design House.
         Explore our creations, immerse yourself in our world, and let the allure
         of dark luxury enrich your spaces.
       </h1>
+      {/* <p className={styles["sub-text"]}>
+        Whether you are a connoisseur of dark luxurious interiors, an aspiring
+        interior designer, or someone who appreciates the art of opulence, we
+        invite you to embark on this journey with Nyeusi Interior Design House.
+      </p> */}
+      <ProjectList className={styles.list} />
       <div className={styles.container}>
         {/* contemporary project */}
         <div className={`${styles["grid-gallery"]}`}>
@@ -172,20 +169,22 @@ function Projects() {
           })}
         </div>
       </div>
-      <p className={styles["subText--1"]}>
-        Our commitment to excellence extends to every facet of interior design.
-        We don't just offer exceptional furniture; we weave it seamlessly into
-        your design, ensuring that every element complements the whole. The
-        result is a harmonious, functional, and beautiful environment that
-        transcends mere aesthetics.
-      </p>
-      <p className={styles["subText--2"]}>
-        Our commitment to excellence extends to every facet of interior design.
-        We don't just offer exceptional furniture; we weave it seamlessly into
-        your design, ensuring that every element complements the whole. The
-        result is a harmonious, functional, and beautiful environment that
-        transcends mere aesthetics.
-      </p>
+      <div className={styles["sub-text"]}>
+        <p className={styles["sub-text--1"]}>
+          Our commitment to excellence extends to every facet of interior
+          design. We don't just offer exceptional furniture; we weave it
+          seamlessly into your design, ensuring that every element complements
+          the whole. The result is a harmonious, functional, and beautiful
+          environment that transcends mere aesthetics.
+        </p>
+        <p className={styles["sub-text--2"]}>
+          Our commitment to excellence extends to every facet of interior
+          design. We don't just offer exceptional furniture; we weave it
+          seamlessly into your design, ensuring that every element complements
+          the whole. The result is a harmonious, functional, and beautiful
+          environment that transcends mere aesthetics.
+        </p>
+      </div>
     </section>
   );
 }

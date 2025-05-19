@@ -14,7 +14,7 @@
 
 .heading {
   @extend %span-full;
-  font-size: calc(functions.pxToResponsiveUnit(50px));
+  font-size: calc(functions.px-to-responsive-unit(50px));
   font-family: variables.$ff-bricolage-grotesque;
 }
 
@@ -24,7 +24,7 @@
   font-size: 18px;
 }
 
-.subText {
+.sub-text {
   &--1 {
     @extend %text;
     grid-column: 1/7;
@@ -82,12 +82,12 @@
   gap: 16px;
 
   h3 {
-    font-size: functions.pxToResponsiveUnit(28px);
+    font-size: functions.px-to-responsive-unit(28px);
     font-weight: 500;
   }
 
   p {
-    font-size: functions.pxToResponsiveUnit(20px);
+    font-size: functions.px-to-responsive-unit(20px);
     font-family: variables.$ff-lato;
     line-height: 28px;
   }

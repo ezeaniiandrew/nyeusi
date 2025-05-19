@@ -10,7 +10,8 @@
   transition: 0.3s ease;
 }
 
-.solid {
+%link-solid {
+  @include flex;
   text-transform: uppercase;
   padding: 6px 10px;
   border-radius: 16px;
@@ -19,14 +20,9 @@
   border: none;
   background-color: $border-color;
   color: $primary-color;
-  @include flex();
   gap: 10px;
   cursor: pointer;
   width: 100%;
-
-  @include mediaQuery(md) {
-    width: auto;
-  }
 
   &:hover {
     background-color: $btn-hover-color;
@@ -37,16 +33,28 @@
     transform: rotate(90deg);
   }
 
+  @include media-query(md) {
+    width: auto;
+  }
+}
+
+.solid {
+  @extend %link-solid;
+
   svg {
     @extend %icon-style;
   }
 }
 
-.outlined {
-  @extend .solid;
+%link-outlined {
+  @extend %link-solid;
   background-color: transparent;
   border: 1px solid $border-color;
   color: $secondary-color;
+}
+
+.outlined {
+  @extend %link-outlined;
 
   &:hover {
     border: 1px solid $btn-hover-color;
@@ -59,7 +67,7 @@
 }
 
 .text {
-  @extend .outlined;
+  @extend %link-outlined;
   border: none;
 
   &:hover {

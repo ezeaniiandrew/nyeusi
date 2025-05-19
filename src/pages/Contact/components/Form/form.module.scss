@@ -9,7 +9,7 @@
   flex-direction: column;
   gap: 20px;
 
-  @include mediaQuery(md) {
+  @include media-query(md) {
     & {
       grid-column: 2/-1;
       grid-row: 1/1;

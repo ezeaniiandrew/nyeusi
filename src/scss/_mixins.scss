@@ -1,4 +1,5 @@
-@use "./functions" as *;
+@use "./functioFns" as *;
+@use "sass:map";
 
 @mixin flex($align: center, $justify: center) {
   @if check-args(($align, $justify), string, string) {
@@ -8,7 +9,12 @@
   }
 }
 
-@mixin backgroundImage($mobileUrl, $mobileHeight, $desktopUrl, $desktopHeight) {
+@mixin background-image(
+  $mobileUrl,
+  $mobileHeight,
+  $desktopUrl,
+  $desktopHeight
+) {
   @if check-args(
     ($mobileUrl, $mobileHeight, $desktopUrl, $desktopHeight),
     string,
@@ -23,7 +29,7 @@
     background-position: center center;
     height: $mobileHeight;
 
-    @include mediaQuery(md) {
+    @include media-query(md) {
       & {
         background-image: url($desktopUrl);
         height: $desktopHeight;
@@ -32,23 +38,23 @@
   }
 }
 
-@mixin mediaQuery($breakpoint) {
+@mixin media-query($breakpoint) {
   $breakpoints: (
-    sm: pxToResponsiveUnit(600px, em),
-    md: pxToResponsiveUnit(768px, em),
-    lg: pxToResponsiveUnit(992px, em),
-    xl: pxToResponsiveUnit(1024px, em),
-    xxl: pxToResponsiveUnit(1280px, em),
-    xxxl: pxToResponsiveUnit(1400px, em),
+    sm: px-to-responsive-unit(600px, em),
+    md: px-to-responsive-unit(768px, em),
+    lg: px-to-responsive-unit(992px, em),
+    xl: px-to-responsive-unit(1024px, em),
+    xxl: px-to-responsive-unit(1280px, em),
+    xxxl: px-to-responsive-unit(1400px, em),
   );
 
-  @if map-has-key($map: $breakpoints, $key: $breakpoint) {
-    @if ($breakpoint == "sm") {
-      @media screen and (max-width: map-get($breakpoints, $breakpoint)) {
+  @if map.has-key($map: $breakpoints, $key: $breakpoint) {
+    @if $breakpoint == "sm" {
+      @media screen and (max-width: map.get($breakpoints, $breakpoint)) {
         @content;
       }
     } @else {
-      @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      @media screen and (min-width: map.get($breakpoints, $breakpoint)) {
         @content;
       }
     }

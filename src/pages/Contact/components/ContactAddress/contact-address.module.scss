@@ -1,6 +1,6 @@
-@use "../../../../scss/variables" as *;
-@use "../../../../scss/mixins" as *;
-@use "../../../../scss/functions" as *;
+@use "@/scss/variables" as *;
+@use "@/scss/mixins" as *;
+@use "@/scss/functions" as *;
 
 .address {
   display: grid;
@@ -11,16 +11,16 @@
     gap: 8px;
     font-family: $ff-lato;
     line-height: inherit;
-    font-size: pxToResponsiveUnit(16px);
+    font-size: px-to-responsive-unit(16px);
 
-    @include mediaQuery(md) {
-      font-size: pxToResponsiveUnit(18px);
+    @include media-query(md) {
+      font-size: px-to-responsive-unit(18px);
     }
 
     span {
+      @include flex;
       width: 24px;
       height: 24px;
-      @include flex();
       border: 1px solid $secondary-color;
       padding: 4px;
       border-radius: 50%;

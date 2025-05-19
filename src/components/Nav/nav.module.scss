@@ -8,16 +8,16 @@
   justify-content: space-between;
 
   h2 {
-    font-size: pxToResponsiveUnit(24px);
+    @include flex($align: flex-start);
+    font-size: px-to-responsive-unit(24px);
     text-transform: uppercase;
     color: $brand-logo-color;
-    @include flex($align: flex-start);
     line-height: 28px;
     font-weight: 500;
     letter-spacing: -0.05em;
 
-    @include mediaQuery(lg) {
-      font-size: pxToResponsiveUnit(34px);
+    @include media-query(lg) {
+      font-size: px-to-responsive-unit(34px);
     }
 
     span {
@@ -35,13 +35,13 @@
       color: $black;
     }
 
-    @include mediaQuery(sm) {
-      padding: 150px 0 0 0;
+    @include media-query(sm) {
+      padding: 150px 0 0;
       padding-inline: 2rem;
       flex-direction: column;
       align-items: center;
       position: fixed;
-      inset: 0 0 0 0;
+      inset: 0;
       z-index: 1000;
       background-color: $brand-logo-color;
       transition: transform 0.7s ease;
@@ -63,7 +63,7 @@
     transform: translate(115vw);
   }
 
-  @include mediaQuery(md) {
+  @include media-query(md) {
     display: none;
 
     &[aria-expanded="false"] + ul {

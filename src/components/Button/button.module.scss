@@ -10,10 +10,10 @@
   background-color: $border-color;
   color: $primary-color;
   font-family: $ff-lato;
-  font-size: pxToResponsiveUnit(16px);
+  font-size: px-to-responsive-unit(16px);
   font-weight: 600;
 
-  @include mediaQuery(lg) {
+  @include media-query(lg) {
     & {
       padding: 10px;
     }

@@ -3,12 +3,12 @@
 @use "@/scss/mixins" as *;
 
 .contact {
-  @include mediaQuery(md) {
+  @include media-query(md) {
     grid-column: 1/7;
     margin-inline-end: 10px;
   }
 
-  @include mediaQuery(lg) {
+  @include media-query(lg) {
     margin-inline-end: 30px;
   }
 
@@ -20,16 +20,16 @@
     &:first-of-type {
       margin-block-end: 10px;
 
-      @include mediaQuery(lg) {
+      @include media-query(lg) {
         margin-block-end: 30px;
       }
     }
 
     h2 {
       font-size: clamp(
-        pxToResponsiveUnit(24px),
+        px-to-responsive-unit(24px),
         4vw + 0.75rem,
-        pxToResponsiveUnit(64px)
+        px-to-responsive-unit(64px)
       );
       line-height: 32px;
       font-weight: inherit;
@@ -38,8 +38,8 @@
       & + p {
         font-family: $ff-lato;
 
-        @include mediaQuery(md) {
-          font-size: pxToResponsiveUnit(20px);
+        @include media-query(md) {
+          font-size: px-to-responsive-unit(20px);
           margin-block-start: 20px;
         }
       }
@@ -49,7 +49,7 @@
   & + form {
     grid-column: 1/-1;
 
-    @include mediaQuery(md) {
+    @include media-query(md) {
       grid-column: 7/-1;
     }
   }
@@ -60,28 +60,28 @@
   grid-row: 2/3;
   margin-block: 40px;
 
-  @include backgroundImage(
+  @include background-image(
     "../../assets/contact-page-image-mobile.jpg",
     218px,
     "../../assets/contact-page-image-desktop.jpg",
     546px
   );
 
-  @include mediaQuery(md) {
+  @include media-query(md) {
     grid-column: 1/-1;
   }
 
   & + p {
     display: none;
 
-    @include mediaQuery(md) {
+    @include media-query(md) {
       display: block;
       letter-spacing: -0.05em;
       grid-column: 1/-1;
       font-size: clamp(
-        pxToResponsiveUnit(36px),
+        px-to-responsive-unit(36px),
         3vw + 1rem,
-        pxToResponsiveUnit(48px)
+        px-to-responsive-unit(48px)
       );
     }
   }

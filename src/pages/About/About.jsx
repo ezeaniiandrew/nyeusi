@@ -15,7 +15,7 @@ function About() {
       <div className={styles.img}>
         <img src={heroImg} alt="" />
       </div>
-      <p className={styles["subText--1"]}>
+      <p className={styles["sub-text--1"]}>
         At Nyeusi Interior Design House, our creative process is rooted in
         meticulous attention to detail and a commitment to the timeless art of
         design. Our journey begins with a deep understanding of your vision and
@@ -23,7 +23,7 @@ function About() {
         nuance is not only heard but celebrated. This partnership fuels our
         inspiration and guides our creative direction.
       </p>
-      <p className={styles["subText--2"]}>
+      <p className={styles["sub-text--2"]}>
         At Nyeusi Interior Design House, our creative process is rooted in
         meticulous attention to detail and a commitment to the timeless art of
         design. Our journey begins with a deep understanding of your vision and

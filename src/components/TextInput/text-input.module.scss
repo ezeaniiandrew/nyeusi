@@ -11,7 +11,7 @@ div:has(textarea) {
   }
 
   textarea {
-    min-height: pxToResponsiveUnit(140px);
+    min-height: px-to-responsive-unit(140px);
     height: 90%;
   }
 }

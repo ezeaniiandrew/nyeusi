@@ -10,39 +10,75 @@
   @extend %span-full;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+
+  @include mixins.media-query(sm) {
+    & {
+      grid-template-columns: 1fr;
+    }
+  }
 }
 
 .heading {
   @extend %span-full;
-  font-size: calc(functions.pxToResponsiveUnit(50px));
+  font-size: calc(functions.px-to-responsive-unit(50px));
   font-family: variables.$ff-bricolage-grotesque;
 }
 
 %text {
-  font-family: variables.$ff-lato;
-  margin-block: 50px;
-  font-size: 18px;
+  margin-block-start: 16px;
+
+  @include mixins.media-query(md) {
+    font-family: variables.$ff-lato;
+    font-size: 18px;
+    margin-block-start: 50px;
+  }
 }
 
-.subText {
-  &--1 {
-    @extend %text;
-    grid-column: 1/7;
-    margin-inline-end: 3.5rem;
+.sub-text {
+  @extend %span-full;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+
+  @include mixins.media-query(md) {
+    & {
+      flex-direction: row;
+    }
   }
 
+  @include mixins.media-query(lg) {
+    & {
+      gap: 50px;
+    }
+  }
+
+  &--1,
   &--2 {
     @extend %text;
-    grid-column: 7/-1;
-    margin-inline-start: 3.5rem;
   }
 }
 
 .container {
+  @extend %span-full;
   display: flex;
   overflow-x: auto;
   gap: 40px;
-  @extend %span-full;
+  margin-block-start: 50px;
+
+  @include mixins.media-query(sm) {
+    & {
+      display: none;
+    }
+  }
+}
+
+.list {
+  margin-block: 40px;
+  display: grid;
+
+  @include mixins.media-query(md) {
+    display: none;
+  }
 }
 
 .grid-gallery {
@@ -56,7 +92,6 @@
 
   &-img {
     object-fit: cover;
-    height: 100%;
     height: 100%;
   }
 
@@ -75,17 +110,22 @@
       display: flex;
       justify-content: space-between;
 
+      @include mixins.media-query(sm) {
+        grid-column: 1/-1;
+        grid-row: 1/1;
+      }
+
       h2 {
         font-family: variables.$ff-bricolage-grotesque;
         font-weight: 500;
         letter-spacing: -3%;
         text-align: bottom;
         text-transform: uppercase;
-        font-size: functions.pxToResponsiveUnit(20px);
+        font-size: functions.px-to-responsive-unit(20px);
       }
 
       p {
-        font-size: functions.pxToResponsiveUnit(18px);
+        font-size: functions.px-to-responsive-unit(18px);
       }
     }
 

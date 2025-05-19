@@ -1,9 +1,8 @@
 import { MdArrowOutward } from "react-icons/md";
 import styles from "./home.module.scss";
-import { pastProjectsData } from "@/constants/index";
 import mobileHeroImage from "@/assets/hero-image-small.jpg";
 import desktopHeroImage from "@/assets/hero-image-big.jpg";
-import { Link, ProjectCard, ProjectList } from "@/components";
+import { Link, ProjectList } from "@/components";
 
 function Home() {
   return (
@@ -12,7 +11,7 @@ function Home() {
         <h1>
           GAME CHANGERS IN BOLD LUXURIOUS INTERIORS THAT DARE TO STAND OUT
         </h1>
-        <div className={styles.hero_textbox}>
+        <div className={styles["hero-textbox"]}>
           <p>
             We are a modern interior design house with a focus on cosy, sleek
             and rich inviting abodes dubbed in dark colors and textures turning
@@ -31,7 +30,7 @@ function Home() {
           sizes="(min-width: 1024px) 45vw,"
           loading="lazy"
         />
-        <div className={styles.more_info}>
+        <div className={styles["more-info"]}>
           <p>
             Welcome to the realm of Nyeusi Interior Design House, where the art
             of crafting dark luxurious interiors finds its ultimate expression.
@@ -39,8 +38,8 @@ function Home() {
             sophistication, aesthetics, and functionality in the realm of
             interior design.
           </p>
-          <div className={styles.image_one}></div>
-          <div className={styles.image_two}></div>
+          <div className={styles["image-one"]}></div>
+          <div className={styles["image-two"]}></div>
           <div className={styles.textbox}>
             <p>
               In the heart of Nyeusi, the allure of darkness and luxury is woven
@@ -60,7 +59,7 @@ function Home() {
         </div>
       </section>
       <section className={styles.projects}>
-        <div className={styles.projects_textbox}>
+        <div className={styles["projects-textbox"]}>
           <h2>our past projects</h2>
           <p>
             Whether you are a connoisseur of dark luxurious interiors, an
@@ -70,7 +69,7 @@ function Home() {
             our world, and let the allure of dark luxury enrich your spaces.
           </p>
         </div>
-        <ProjectList />
+        <ProjectList className={styles.list} />
       </section>
     </>
   );

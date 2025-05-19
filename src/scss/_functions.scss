@@ -1,17 +1,21 @@
 @use "./variables" as *;
+@use "sass:list";
+@use "sass:meta";
+@use "sass:map";
 
 @function check-args($args, $types...) {
-  $args-length: length($args);
-  $types-length: length($types);
+  $args-length: list.length($args);
+  $types-length: list.length($types);
 
   @if $args-length != $types-length {
     $description: if($types-length != 1, "arguments", "argument");
+
     @error "Expected #{$types-length} #{$description}, but got #{$args-length}.";
   }
 
-  @for $i from 1 through length($args) {
-    $arg-type: type-of(nth($args, $i));
-    $expected-type: nth($types, $i);
+  @for $i from 1 through list.length($args) {
+    $arg-type: meta.type-of(list.nth($args, $i));
+    $expected-type: list.nth($types, $i);
 
     @if $arg-type != $expected-type {
       @error "Argument #{$i} is expected to be #{$expected-type}, but received #{$arg-type}";
@@ -21,17 +25,17 @@
   @return true;
 }
 
-@function pxToResponsiveUnit($px, $unit: rem) {
+@function px-to-responsive-unit($px, $unit: rem) {
   @if check-args(($px, $unit), number, string) {
     $units: (
       rem: 1rem,
       em: 1em,
     );
 
-    @if map-has-key($units, $unit) == false {
-      @error "Invalid target unit: #{$unit}. Please use one of: #{map-keys($units)}";
+    @if map.has-key($units, $unit) == false {
+      @error "Invalid target unit: #{$unit}. Please use one of: #{map.keys($units)}";
     }
 
-    @return calc($px / 16px * map-get($units, $unit));
+    @return calc($px / 16px * map.get($units, $unit));
   }
 }

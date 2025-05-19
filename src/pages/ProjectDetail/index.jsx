@@ -41,7 +41,7 @@ function ProjectDetail() {
             transition={{ duration: 0.3 }}
             src={currentImage.src}
             alt={currentImage.alt}
-            sizes="(max-width: 768px) 100vw, 66vw"
+            fetchPriority="high"
           />
         </AnimatePresence>
         <div className={styles.arrows}>

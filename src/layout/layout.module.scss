@@ -13,9 +13,8 @@
   height: 66px;
   z-index: 100000;
 
-  @include mediaQuery(md) {
-    padding-block-start: 35px;
-    padding-block-end: 60px;
+  @include media-query(md) {
+    padding-block: 35px 60px;
     height: 81px;
   }
 }
@@ -25,7 +24,7 @@
   display: grid;
   padding-inline: clamp(18px, 5vw, 72px);
 
-  @include mediaQuery(md) {
+  @include media-query(md) {
     grid-template-columns: repeat(12, 1fr);
   }
 }
@@ -36,7 +35,7 @@
   display: grid;
   row-gap: 96px;
 
-  @include mediaQuery(xl) {
+  @include media-query(xl) {
     & {
       grid-template-columns: repeat(2, 1fr);
       column-gap: 100px;

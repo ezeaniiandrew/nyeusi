@@ -1,74 +1,80 @@
-@use "@/scss/variables" as *;
-@use "@/scss/mixins" as *;
-@use "@/scss/functions" as *;
+@use "@/scss/variables" as v;
+@use "@/scss/mixins" as m;
+@use "@/scss/functions" as f;
 
 .container {
   grid-column: 1/-1;
 
   h1 {
-    font-family: $ff-bricolage-grotesque;
+    font-family: v.$ff-bricolage-grotesque;
     font-weight: 500;
-    font-size: clamp(pxToResponsiveUnit(32px), 4vw + 0.5rem, 76px);
+    font-size: clamp(
+      f.px-to-responsive-unit(32px),
+      4vw + 0.5rem,
+      f.px-to-responsive-unit(76px)
+    );
     line-height: clamp(38px, 4vw + 2rem, 92px);
     letter-spacing: -0.02em;
     margin-block-end: 20px;
 
-    @include mediaQuery(xl) {
+    @include m.media-query(xl) {
       margin-block-end: 28px;
       letter-spacing: -0.005em;
     }
 
-    @include mediaQuery(xxl) {
+    @include m.media-query(xxl) {
       line-height: 92px;
-      font-size: clamp(pxToResponsiveUnit(32px), 4vw + 0.9rem, 76px);
+      font-size: clamp(
+        f.px-to-responsive-unit(32px),
+        4vw + 0.9rem,
+        f.px-to-responsive-unit(76px)
+      );
       letter-spacing: normal;
     }
   }
 }
 
-.hero_textbox {
-  @include flex($justify: space-between);
+.hero-textbox {
+  @include m.flex($justify: space-between);
   flex-direction: column;
   gap: 20px;
   width: min(100%, 720px);
 
-  @include mediaQuery(md) {
+  @include m.media-query(md) {
     margin: 0 auto;
     flex-direction: row;
   }
 
   p {
-    font-size: clamp(1rem, 4vw + 0.2rem, calc(pxToResponsiveUnit(20px)));
+    font-size: clamp(1rem, 4vw + 0.2rem, calc(f.px-to-responsive-unit(20px)));
     max-width: min(100%, 511px);
-    font-family: $ff-lato;
+    font-family: v.$ff-lato;
   }
 
   & + img {
-    margin-block-start: 40px;
-    margin-block-end: 80px;
+    margin-block-start: 40px 80px;
 
-    @include mediaQuery(lg) {
+    @include m.media-query(lg) {
       margin-block-start: 52px;
     }
   }
 }
 
-.more_info {
+.more-info {
   margin-block: 40px;
   display: grid;
 
-  @include mediaQuery(lg) {
+  @include m.media-query(lg) {
     & {
       grid-template-columns: repeat(2, 1fr);
       margin-block-start: 50px;
-      column-gap: 24px;
-      row-gap: 52px;
+      gap: 52px 24px;
     }
   }
 
   & > p {
-    font-family: $ff-bricolage-grotesque;
-    font-size: clamp(24px, 4vw + 0.75rem, pxToResponsiveUnit(36px));
+    font-family: v.$ff-bricolage-grotesque;
+    font-size: clamp(24px, 4vw + 0.75rem, f.px-to-responsive-unit(36px));
     line-height: 1.5;
     letter-spacing: -0.02em;
     grid-column: 1/-1;
@@ -76,22 +82,21 @@
   }
 
   .textbox {
-    margin-block-start: 28px;
-    margin-block-end: 52px;
-    font-family: $ff-lato;
-    font-size: calc(pxToResponsiveUnit(20px) + 0.1vw);
-    @include flex();
+    @include m.flex;
+    margin-block: 28px 52px;
+    font-family: v.$ff-lato;
+    font-size: calc(f.px-to-responsive-unit(20px) + 0.1vw);
     flex-direction: column;
     gap: 24px;
     line-height: 28px;
     letter-spacing: -0.01em;
 
-    @include mediaQuery(lg) {
+    @include m.media-query(lg) {
       & {
         grid-column: 2/-1;
         grid-row: 2;
         margin-block-start: 0;
-        font-size: calc(pxToResponsiveUnit(17px) + 0.1vw);
+        font-size: calc(f.px-to-responsive-unit(17px) + 0.1vw);
         align-self: start;
 
         & p:nth-of-type(1) {
@@ -101,8 +106,8 @@
     }
   }
 
-  .image_one {
-    @include backgroundImage(
+  .image-one {
+    @include m.background-image(
       "../../assets/mobile-home-image-1.jpg",
       260px,
       "../../assets/desktop-home-image-1.jpg",
@@ -110,25 +115,24 @@
     );
     border-radius: 8px;
 
-    @include mediaQuery(lg) {
+    @include m.media-query(lg) {
       & {
         grid-column: 1/2;
       }
     }
   }
 
-  .image_two {
-    @include backgroundImage(
+  .image-two {
+    @include m.background-image(
       "../../assets/mobile-home-image-2.jpg",
       260px,
       "../../assets/desktop-home-image-2.jpg",
       564px
     );
-    grid-row: 3/4;
     grid-row: 4/5;
     border-radius: 8px;
 
-    @include mediaQuery(lg) {
+    @include m.media-query(lg) {
       grid-column: 1/-1;
       grid-row: auto;
     }
@@ -139,14 +143,14 @@
   grid-column: 1/-1;
   margin-block-start: 60px;
 
-  &_textbox {
-    @include flex($align: start);
+  &-textbox {
+    @include m.flex($align: start);
     flex-direction: column;
     gap: 16px;
     letter-spacing: -0.01em;
     margin-block-end: 40px;
 
-    @include mediaQuery(xxl) {
+    @include m.media-query(xxl) {
       & {
         flex-direction: row;
         margin-block-end: 52px;
@@ -155,22 +159,21 @@
     }
 
     h2 {
-      line-height: 32px;
       text-transform: uppercase;
       font-size: clamp(
-        pxToResponsiveUnit(24px),
+        f.px-to-responsive-unit(24px),
         4vw + 0.5rem,
-        pxToResponsiveUnit(64px)
+        f.px-to-responsive-unit(64px)
       );
       line-height: clamp(32px, 3vw + 1rem, 80px);
     }
 
     p {
-      font-family: $ff-lato;
-      font-size: clamp(1rem, 4vw + 0.5rem, pxToResponsiveUnit(20px));
+      font-family: v.$ff-lato;
+      font-size: clamp(1rem, 4vw + 0.5rem, f.px-to-responsive-unit(20px));
       line-height: 24px;
 
-      @include mediaQuery(xxl) {
+      @include m.media-query(xxl) {
         & {
           width: 43%;
           max-width: 583px;
@@ -178,4 +181,8 @@
       }
     }
   }
+}
+
+.list {
+  display: grid;
 }
