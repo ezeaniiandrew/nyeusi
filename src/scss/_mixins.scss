@@ -1,8 +1,8 @@
-@use "./functioFns" as *;
+@use "./functions" as f;
 @use "sass:map";
 
 @mixin flex($align: center, $justify: center) {
-  @if check-args(($align, $justify), string, string) {
+  @if f.check-args(($align, $justify), string, string) {
     display: flex;
     align-items: $align;
     justify-content: $justify;
@@ -15,7 +15,7 @@
   $desktopUrl,
   $desktopHeight
 ) {
-  @if check-args(
+  @if f.check-args(
     ($mobileUrl, $mobileHeight, $desktopUrl, $desktopHeight),
     string,
     number,

@@ -1,6 +1,6 @@
-@use "@/scss/variables";
-@use "@/scss/functions";
-@use "@/scss/mixins";
+@use "@/scss/variables" as v;
+@use "@/scss/functions" as f;
+@use "@/scss/mixins" as m;
 
 %span-full {
   grid-column: 1/-1;
@@ -11,7 +11,7 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
 
-  @include mixins.media-query(sm) {
+  @include m.media-query(sm) {
     & {
       grid-template-columns: 1fr;
     }
@@ -20,15 +20,15 @@
 
 .heading {
   @extend %span-full;
-  font-size: calc(functions.px-to-responsive-unit(50px));
-  font-family: variables.$ff-bricolage-grotesque;
+  font-size: calc(f.px-to-responsive-unit(50px));
+  font-family: v.$ff-bricolage-grotesque;
 }
 
 %text {
   margin-block-start: 16px;
 
-  @include mixins.media-query(md) {
-    font-family: variables.$ff-lato;
+  @include m.media-query(md) {
+    font-family: v.$ff-lato;
     font-size: 18px;
     margin-block-start: 50px;
   }
@@ -40,13 +40,13 @@
   gap: 20px;
   flex-direction: column;
 
-  @include mixins.media-query(md) {
+  @include m.media-query(md) {
     & {
       flex-direction: row;
     }
   }
 
-  @include mixins.media-query(lg) {
+  @include m.media-query(lg) {
     & {
       gap: 50px;
     }
@@ -65,7 +65,7 @@
   gap: 40px;
   margin-block-start: 50px;
 
-  @include mixins.media-query(sm) {
+  @include m.media-query(sm) {
     & {
       display: none;
     }
@@ -76,7 +76,7 @@
   margin-block: 40px;
   display: grid;
 
-  @include mixins.media-query(md) {
+  @include m.media-query(md) {
     display: none;
   }
 }
@@ -105,27 +105,27 @@
       grid-column: 5/11;
       padding-block-start: 8px;
       padding-inline: 5px;
-      border: 1.5px solid variables.$secondary-color;
+      border: 1.5px solid v.$secondary-color;
       border-radius: 8px;
       display: flex;
       justify-content: space-between;
 
-      @include mixins.media-query(sm) {
+      @include m.media-query(sm) {
         grid-column: 1/-1;
         grid-row: 1/1;
       }
 
       h2 {
-        font-family: variables.$ff-bricolage-grotesque;
+        font-family: v.$ff-bricolage-grotesque;
         font-weight: 500;
         letter-spacing: -3%;
         text-align: bottom;
         text-transform: uppercase;
-        font-size: functions.px-to-responsive-unit(20px);
+        font-size: f.px-to-responsive-unit(20px);
       }
 
       p {
-        font-size: functions.px-to-responsive-unit(18px);
+        font-size: f.px-to-responsive-unit(18px);
       }
     }
 

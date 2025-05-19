@@ -1,9 +1,9 @@
-@use "@/scss/variables" as *;
-@use "@/scss/functions" as *;
-@use "@/scss/mixins" as *;
+@use "@/scss/variables" as v;
+@use "@/scss/functions" as f;
+@use "@/scss/mixins" as m;
 
 .card {
-  border: 1px solid $card-border-color;
+  border: 1px solid v.$card-border-color;
   border-radius: 12px;
 
   &_img {
@@ -13,19 +13,19 @@
   }
 
   &_body {
-    @include flex(initial, space-between);
+    @include m.flex(initial, space-between);
     flex-direction: column;
     padding-inline: 8px;
     padding-block-end: 12px;
     row-gap: 16px;
 
-    @include media-query(xl) {
+    @include m.media-query(xl) {
       flex-direction: row;
     }
 
     p {
-      font-family: $ff-lato;
-      font-size: px-to-responsive-unit(18px);
+      font-family: v.$ff-lato;
+      font-size: f.px-to-responsive-unit(18px);
       letter-spacing: -0.03em;
     }
   }

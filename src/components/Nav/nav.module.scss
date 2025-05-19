@@ -1,6 +1,6 @@
-@use "@/scss/variables" as *;
-@use "@/scss/functions" as *;
-@use "@/scss/mixins" as *;
+@use "@/scss/variables" as v;
+@use "@/scss/functions" as f;
+@use "@/scss/mixins" as m;
 
 .nav {
   display: flex;
@@ -8,20 +8,20 @@
   justify-content: space-between;
 
   h2 {
-    @include flex($align: flex-start);
-    font-size: px-to-responsive-unit(24px);
+    @include m.flex($align: flex-start);
+    font-size: f.px-to-responsive-unit(24px);
     text-transform: uppercase;
-    color: $brand-logo-color;
+    color: v.$brand-logo-color;
     line-height: 28px;
     font-weight: 500;
     letter-spacing: -0.05em;
 
-    @include media-query(lg) {
-      font-size: px-to-responsive-unit(34px);
+    @include m.media-query(lg) {
+      font-size: f.px-to-responsive-unit(34px);
     }
 
     span {
-      color: $secondary-color;
+      color: v.$secondary-color;
     }
   }
 
@@ -30,12 +30,12 @@
     gap: 20px;
 
     & a[aria-current="page"] {
-      background-color: $secondary-color;
-      border: 1px solid $secondary-color;
-      color: $black;
+      background-color: v.$secondary-color;
+      border: 1px solid v.$secondary-color;
+      color: v.$black;
     }
 
-    @include media-query(sm) {
+    @include m.media-query(sm) {
       padding: 150px 0 0;
       padding-inline: 2rem;
       flex-direction: column;
@@ -43,7 +43,7 @@
       position: fixed;
       inset: 0;
       z-index: 1000;
-      background-color: $brand-logo-color;
+      background-color: v.$brand-logo-color;
       transition: transform 0.7s ease;
 
       li {
@@ -63,7 +63,7 @@
     transform: translate(115vw);
   }
 
-  @include media-query(md) {
+  @include m.media-query(md) {
     display: none;
 
     &[aria-expanded="false"] + ul {

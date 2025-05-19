@@ -1,19 +1,19 @@
-@use "@/scss/functions" as *;
-@use "@/scss/variables" as *;
-@use "@/scss/mixins" as *;
+@use "@/scss/functions" as f;
+@use "@/scss/variables" as v;
+@use "@/scss/mixins" as m;
 
 .company {
-  font-size: px-to-responsive-unit(18px);
+  font-size: f.px-to-responsive-unit(18px);
   max-inline-size: min(448px, 100%);
   letter-spacing: -0.03em;
 
-  @include media-query(md) {
-    font-size: px-to-responsive-unit(24px);
+  @include m.media-query(md) {
+    font-size: f.px-to-responsive-unit(24px);
   }
 
   p,
   span {
-    color: $secondary-color;
+    color: v.$secondary-color;
   }
 
   span {
@@ -23,19 +23,19 @@
 
   p:has(span) {
     font-weight: 300;
-    font-size: px-to-responsive-unit(24px);
+    font-size: f.px-to-responsive-unit(24px);
     margin-block-end: 20px;
 
     span:is(:first-child) {
-      color: $btn-hover-color;
+      color: v.$btn-hover-color;
     }
 
     & + p + p {
       margin-block-start: 14px;
-      font-size: px-to-responsive-unit(16px);
+      font-size: f.px-to-responsive-unit(16px);
 
-      @include media-query(md) {
-        font-size: px-to-responsive-unit(20px);
+      @include m.media-query(md) {
+        font-size: f.px-to-responsive-unit(20px);
       }
     }
   }
@@ -44,9 +44,9 @@
 .description {
   display: none;
 
-  @include media-query(lg) {
+  @include m.media-query(lg) {
     display: block;
-    font-size: px-to-responsive-unit(20px);
+    font-size: f.px-to-responsive-unit(20px);
     letter-spacing: -0.01em;
     max-inline-size: 583px;
     grid-row: 1;
@@ -59,14 +59,14 @@
   display: grid;
   row-gap: 16px;
 
-  @include media-query(md) {
+  @include m.media-query(md) {
     row-gap: 0;
     grid-column: 1/-1;
-    border: 2px solid $secondary-color;
+    border: 2px solid v.$secondary-color;
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @include media-query(xxl) {
+  @include m.media-query(xxl) {
     grid-template-columns: repeat(4, 1fr);
   }
 
@@ -75,17 +75,17 @@
     text-align: center;
     grid-column: 1/-1;
     padding: 0.5rem 0;
-    font-size: px-to-responsive-unit(14px);
+    font-size: f.px-to-responsive-unit(14px);
 
-    @include media-query(md) {
-      border-block-start: 2px solid $secondary-color;
+    @include m.media-query(md) {
+      border-block-start: 2px solid v.$secondary-color;
     }
 
     a {
-      color: $brand-logo-color;
+      color: v.$brand-logo-color;
 
       &:hover {
-        color: $brand-logo-color-dark;
+        color: v.$brand-logo-color-dark;
       }
     }
   }
@@ -95,22 +95,22 @@
 .contacts,
 .socials {
   padding-block: 1rem;
-  border: 2px solid $secondary-color;
+  border: 2px solid v.$secondary-color;
 
   a {
     justify-content: initial;
   }
 
-  @include media-query(md) {
+  @include m.media-query(md) {
     border-inline-start: none;
     border-block-start: none;
     border-block-end: none;
   }
 
   & > p {
-    font-size: px-to-responsive-unit(24px);
+    font-size: f.px-to-responsive-unit(24px);
     text-transform: uppercase;
-    border-bottom: 2px solid $secondary-color;
+    border-bottom: 2px solid v.$secondary-color;
     padding-left: 0.5rem;
     padding-bottom: 0.1rem;
   }
@@ -121,33 +121,33 @@
 }
 
 .links {
-  @include media-query(md) {
+  @include m.media-query(md) {
     grid-column: 1/2;
   }
 
-  @include media-query(xl) {
-    border-left: 2px solid $secondary-color;
+  @include m.media-query(xl) {
+    border-left: 2px solid v.$secondary-color;
     grid-column: 2/3;
   }
 }
 
 .contacts {
-  @include media-query(md) {
+  @include m.media-query(md) {
     grid-column: 2/3;
   }
 
-  @include media-query(xl) {
+  @include m.media-query(xl) {
     grid-column: 3/4;
   }
 }
 
 .socials {
-  @include media-query(md) {
+  @include m.media-query(md) {
     grid-column: 3/4;
     border-inline-end: none;
   }
 
-  @include media-query(xl) {
+  @include m.media-query(xl) {
     grid-column: 4/5;
   }
 }

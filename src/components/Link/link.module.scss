@@ -1,8 +1,8 @@
-@use "@/scss/variables" as *;
-@use "@/scss/mixins" as *;
+@use "@/scss/variables" as v;
+@use "@/scss/mixins" as m;
 
 %icon-style {
-  color: $primary-color;
+  color: v.$primary-color;
   border-radius: 50%;
   width: 18.5px;
   height: 18.5px;
@@ -11,29 +11,29 @@
 }
 
 %link-solid {
-  @include flex;
+  @include m.flex;
   text-transform: uppercase;
   padding: 6px 10px;
   border-radius: 16px;
   font-weight: 400;
-  font-family: $ff-play-fair;
+  font-family: v.$ff-play-fair;
   border: none;
-  background-color: $border-color;
-  color: $primary-color;
+  background-color: v.$border-color;
+  color: v.$primary-color;
   gap: 10px;
   cursor: pointer;
   width: 100%;
 
   &:hover {
-    background-color: $btn-hover-color;
-    color: $black;
+    background-color: v.$btn-hover-color;
+    color: v.$black;
   }
 
   &:hover svg {
     transform: rotate(90deg);
   }
 
-  @include media-query(md) {
+  @include m.media-query(md) {
     width: auto;
   }
 }
@@ -49,15 +49,15 @@
 %link-outlined {
   @extend %link-solid;
   background-color: transparent;
-  border: 1px solid $border-color;
-  color: $secondary-color;
+  border: 1px solid v.$border-color;
+  color: v.$secondary-color;
 }
 
 .outlined {
   @extend %link-outlined;
 
   &:hover {
-    border: 1px solid $btn-hover-color;
+    border: 1px solid v.$btn-hover-color;
   }
 
   svg {
@@ -71,7 +71,7 @@
   border: none;
 
   &:hover {
-    color: $btn-hover-color;
+    color: v.$btn-hover-color;
     background-color: transparent;
     border: none;
   }

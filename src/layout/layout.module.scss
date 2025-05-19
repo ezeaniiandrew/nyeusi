@@ -1,5 +1,5 @@
-@use "../scss/mixins" as *;
-@use "../scss/variables" as *;
+@use "@/scss/mixins" as m;
+@use "@/scss/variables" as v;
 
 .header {
   grid-area: header;
@@ -7,13 +7,13 @@
   top: 0;
   width: 100%;
   max-width: 1440px;
-  background-color: $primary-color;
+  background-color: v.$primary-color;
   padding-inline: clamp(18px, 5vw, 72px);
   padding-block: 27px;
   height: 66px;
   z-index: 100000;
 
-  @include media-query(md) {
+  @include m.media-query(md) {
     padding-block: 35px 60px;
     height: 81px;
   }
@@ -24,7 +24,7 @@
   display: grid;
   padding-inline: clamp(18px, 5vw, 72px);
 
-  @include media-query(md) {
+  @include m.media-query(md) {
     grid-template-columns: repeat(12, 1fr);
   }
 }
@@ -35,7 +35,7 @@
   display: grid;
   row-gap: 96px;
 
-  @include media-query(xl) {
+  @include m.media-query(xl) {
     & {
       grid-template-columns: repeat(2, 1fr);
       column-gap: 100px;

@@ -1,6 +1,6 @@
-@use "@/scss/variables";
-@use "@/scss/functions";
-@use "@/scss/mixins";
+@use "@/scss/variables" as v;
+@use "@/scss/functions" as f;
+@use "@/scss/mixins" as m;
 
 %span-full {
   grid-column: 1/-1;
@@ -14,12 +14,12 @@
 
 .heading {
   @extend %span-full;
-  font-size: calc(functions.px-to-responsive-unit(50px));
-  font-family: variables.$ff-bricolage-grotesque;
+  font-size: calc(f.px-to-responsive-unit(50px));
+  font-family: v.$ff-bricolage-grotesque;
 }
 
 %text {
-  font-family: variables.$ff-lato;
+  font-family: v.$ff-lato;
   margin-block: 50px;
   font-size: 18px;
 }
@@ -65,7 +65,7 @@
 }
 
 .card {
-  border: 1.5px solid variables.$secondary-color;
+  border: 1.5px solid v.$secondary-color;
   padding: 40px;
   display: flex;
   align-items: center;
@@ -77,18 +77,18 @@
 .textbox {
   max-width: 433px;
   margin-inline: auto;
-  font-family: variables.$ff-bricolage-grotesque;
+  font-family: v.$ff-bricolage-grotesque;
   display: grid;
   gap: 16px;
 
   h3 {
-    font-size: functions.px-to-responsive-unit(28px);
+    font-size: f.px-to-responsive-unit(28px);
     font-weight: 500;
   }
 
   p {
-    font-size: functions.px-to-responsive-unit(20px);
-    font-family: variables.$ff-lato;
+    font-size: f.px-to-responsive-unit(20px);
+    font-family: v.$ff-lato;
     line-height: 28px;
   }
 }

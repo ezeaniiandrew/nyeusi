@@ -1,9 +1,9 @@
-@use "@/scss/mixins";
+@use "@/scss/mixins" as m;
 
 .projects-display {
   gap: 24px;
 
-  @include mixins.media-query(md) {
+  @include m.media-query(md) {
     & {
       grid-template-columns: repeat(2, 1fr);
       gap: 28px;

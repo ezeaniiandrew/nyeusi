@@ -1,19 +1,19 @@
-@use "@/scss/variables" as *;
-@use "@/scss/functions" as *;
-@use "@/scss/mixins" as *;
+@use "@/scss/variables" as v;
+@use "@/scss/functions" as f;
+@use "@/scss/mixins" as m;
 
 .btn {
   width: 100%;
   padding: 6px 10px;
   border-radius: 16px;
   border: none;
-  background-color: $border-color;
-  color: $primary-color;
-  font-family: $ff-lato;
-  font-size: px-to-responsive-unit(16px);
+  background-color: v.$border-color;
+  color: v.$primary-color;
+  font-family: v.$ff-lato;
+  font-size: f.px-to-responsive-unit(16px);
   font-weight: 600;
 
-  @include media-query(lg) {
+  @include m.media-query(lg) {
     & {
       padding: 10px;
     }
