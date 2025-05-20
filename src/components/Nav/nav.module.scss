@@ -35,7 +35,7 @@
       color: v.$black;
     }
 
-    @include m.media-query(sm) {
+    @include m.media-query("max-sm") {
       padding: 150px 0 0;
       padding-inline: 2rem;
       flex-direction: column;
