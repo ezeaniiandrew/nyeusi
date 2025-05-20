@@ -1,5 +1,6 @@
 @use "./functions" as f;
 @use "sass:map";
+@use "sass:string";
 
 @mixin flex($align: center, $justify: center) {
   @if f.check-args(($align, $justify), string, string) {
@@ -9,6 +10,7 @@
   }
 }
 
+// This mixin generates a background image for both mobile and desktop views.
 @mixin background-image(
   $mobileUrl,
   $mobileHeight,
@@ -38,27 +40,43 @@
   }
 }
 
+// This mixin generates a media query based on the provided breakpoint.
 @mixin media-query($breakpoint) {
   $breakpoints: (
-    sm: px-to-responsive-unit(600px, em),
-    md: px-to-responsive-unit(768px, em),
-    lg: px-to-responsive-unit(992px, em),
-    xl: px-to-responsive-unit(1024px, em),
-    xxl: px-to-responsive-unit(1280px, em),
-    xxxl: px-to-responsive-unit(1400px, em),
+    sm: f.px-to-responsive-unit(600px, em),
+    md: f.px-to-responsive-unit(768px, em),
+    lg: f.px-to-responsive-unit(992px, em),
+    xl: f.px-to-responsive-unit(1024px, em),
+    xxl: f.px-to-responsive-unit(1280px, em),
+    xxxl: f.px-to-responsive-unit(1400px, em),
   );
 
-  @if map.has-key($map: $breakpoints, $key: $breakpoint) {
-    @if $breakpoint == "sm" {
-      @media screen and (max-width: map.get($breakpoints, $breakpoint)) {
-        @content;
-      }
-    } @else {
-      @media screen and (min-width: map.get($breakpoints, $breakpoint)) {
-        @content;
-      }
-    }
-  } @else {
-    @error "Invalid breakpoint: #{$breakpoint}. Please use one of: #{map-keys($breakpoints)}";
+  /* Check to see if the $breakpoint starts with the 'max-' prefix. Returns a boolean */
+  $is-max: string.index($breakpoint, "max-") == 1;
+
+  /* Get the name of the actual $breakpoint. e.g max-sm => sm */
+  $breakpoint-key: if($is-max, string.slice($breakpoint, 5), $breakpoint);
+
+  /* Check if it's a valid breakpoint */
+  @if not map.has-key($breakpoints, $breakpoint-key) {
+    @error "Invalid breakpoint: #{$breakpoint}. Use one of: #{map-keys($breakpoints)} or a `max-` prefix if you want to target a maximum screen size.";
+  }
+
+  $breakpoint-value: map.get($breakpoints, $breakpoint-key);
+
+  /* Avoid collision at boundary for max-width breakpoints */
+  $adjusted-breakpoint-value: if(
+    $is-max,
+    $breakpoint-value - 0.01em,
+    $breakpoint-value
+  );
+  $media: if(
+    $is-max,
+    "screen and (max-width: #{$adjusted-breakpoint-value})",
+    "screen and (min-width: #{$breakpoint-value})"
+  );
+
+  @media #{$media} {
+    @content;
   }
 }
