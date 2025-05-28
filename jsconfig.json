@@ -8,7 +8,8 @@
       "@/pages": ["./src/pages"],
       "@/routes": ["./src/routes"],
       "@/scss/*": ["./src/scss/*"],
-      "@/constants": ["./src/constants"]
+      "@/constants": ["./src/constants"],
+      "@/hooks": ["./src/hooks"]
     }
   }
 }
