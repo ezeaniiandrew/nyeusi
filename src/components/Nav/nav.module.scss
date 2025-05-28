@@ -59,16 +59,7 @@
   height: 32px;
   z-index: 2000;
 
-  &[aria-expanded="false"] + ul {
-    transform: translate(115vw);
-  }
-
   @include m.media-query(md) {
     display: none;
-
-    &[aria-expanded="false"] + ul {
-      display: flex;
-      transform: translateX(0);
-    }
   }
 }
