@@ -3,6 +3,7 @@ import Nav from "../components/Nav/Nav";
 import styles from "./layout.module.scss";
 import Footer from "@/components/Footer/Footer";
 import { PageTransition } from "@/components";
+import { ScrollRestoration } from "react-router-dom";
 
 function Layout() {
   return (
@@ -13,6 +14,7 @@ function Layout() {
           <Nav />
         </header>
         <main className={styles.main}>
+          <ScrollRestoration />
           <Outlet />
         </main>
         <footer className={styles.footer}>
